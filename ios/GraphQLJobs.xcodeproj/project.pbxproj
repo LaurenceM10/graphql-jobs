@@ -1,0 +1,768 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* GraphQLJobsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GraphQLJobsTests.m */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		714DD8431E5B273CBA10933A /* libPods-GraphQLJobs-GraphQLJobsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2922AEC65B2D1B84EEE56CF0 /* libPods-GraphQLJobs-GraphQLJobsTests.a */; };
+		80F35C747973ED944A267511 /* libPods-GraphQLJobs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85B405F51B3EFAF34ED2D7 /* libPods-GraphQLJobs.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		1BDCDB006C2B486E98566A45 /* PoppinsBlack-VxOe.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0109A82823141479C9CBD4A /* PoppinsBlack-VxOe.otf */; };
+		93FB9331F4BC4E14814E9360 /* PoppinsBlackItalic-JXmK.otf in Resources */ = {isa = PBXBuildFile; fileRef = C43E439BDA6B438C8D082391 /* PoppinsBlackItalic-JXmK.otf */; };
+		740CEF69BAE0499FBF25C820 /* PoppinsBold-GdJA.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2B8C7B6EAB1416E8FE3918C /* PoppinsBold-GdJA.otf */; };
+		6AE525AD6AAB46A685C84903 /* PoppinsBoldItalic-jgZy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5134314BF7114EC9AF3F65CC /* PoppinsBoldItalic-jgZy.otf */; };
+		613C01AED7A44E4D971FA84E /* PoppinsExtrabold-zDdL.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9E141C624B24A7E8FC7337E /* PoppinsExtrabold-zDdL.otf */; };
+		BF7FEBFE7CBC42F2BD13052C /* PoppinsExtraboldItalic-5J8v.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1483832692854BFFA32E9B13 /* PoppinsExtraboldItalic-5J8v.otf */; };
+		D2B9792D0CC64B1A9EF2E205 /* PoppinsExtralight-6Je1.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE68357B7FF74ED199404BB4 /* PoppinsExtralight-6Je1.otf */; };
+		9F5001F29D414DF9B421BBDA /* PoppinsExtralightItalic-yDBV.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1C5823706C64FD8BFB5AC25 /* PoppinsExtralightItalic-yDBV.otf */; };
+		8415BB6968934CD0B81C4BB7 /* PoppinsItalic-9nE2.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAAB780248D34F8B8EAD14E1 /* PoppinsItalic-9nE2.otf */; };
+		F5940EB7808D499B9A13B948 /* PoppinsLight-l4Zw.otf in Resources */ = {isa = PBXBuildFile; fileRef = 83E8DAF7CA9A40E090EECACC /* PoppinsLight-l4Zw.otf */; };
+		53438CC05FC64335B59CA337 /* PoppinsLightItalic-nexO.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90EE06670A6F4AEB956DFA2A /* PoppinsLightItalic-nexO.otf */; };
+		2790533EC17E450FA59F08D2 /* PoppinsMedium-1JPv.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9909DE13391943EEBFD4BB64 /* PoppinsMedium-1JPv.otf */; };
+		3B1373A4FDF4465E84D902C1 /* PoppinsMediumItalic-REKE.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E62107963D840298AA66D7A /* PoppinsMediumItalic-REKE.otf */; };
+		66EA87DEA4C64F0DB475D4C4 /* PoppinsRegular-B2Bw.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CEDA3F22AE2408499A3BB0C /* PoppinsRegular-B2Bw.otf */; };
+		FC9273C7DF6C4EA89B40DD11 /* PoppinsSemibold-8l8n.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD5131B0E4004AA39044A81A /* PoppinsSemibold-8l8n.otf */; };
+		622D4C3067C24C97AB05E1D4 /* PoppinsSemiboldItalic-Y132.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1602521F50CC4017A5F54155 /* PoppinsSemiboldItalic-Y132.otf */; };
+		FF5820EE054241A98DE0D098 /* PoppinsThin-rO2B.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3851BABF31AA4D04A2CCFF49 /* PoppinsThin-rO2B.otf */; };
+		966AE7BC752E407187C873F8 /* PoppinsThinItalic-M4YP.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E2BDD3788184678B6866862 /* PoppinsThinItalic-M4YP.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = GraphQLJobs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* GraphQLJobsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphQLJobsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* GraphQLJobsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphQLJobsTests.m; sourceTree = "<group>"; };
+		0B0179BE06452B7915CE0180 /* Pods-GraphQLJobs-GraphQLJobsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLJobs-GraphQLJobsTests.release.xcconfig"; path = "Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* GraphQLJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphQLJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GraphQLJobs/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = GraphQLJobs/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GraphQLJobs/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GraphQLJobs/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GraphQLJobs/main.m; sourceTree = "<group>"; };
+		2922AEC65B2D1B84EEE56CF0 /* libPods-GraphQLJobs-GraphQLJobsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GraphQLJobs-GraphQLJobsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CFE930D6D32088381CE8CB /* Pods-GraphQLJobs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLJobs.release.xcconfig"; path = "Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs.release.xcconfig"; sourceTree = "<group>"; };
+		74D268DCC555303433435F97 /* Pods-GraphQLJobs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLJobs.debug.xcconfig"; path = "Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GraphQLJobs/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81D555E64EB67B3834BE274F /* Pods-GraphQLJobs-GraphQLJobsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQLJobs-GraphQLJobsTests.debug.xcconfig"; path = "Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FC85B405F51B3EFAF34ED2D7 /* libPods-GraphQLJobs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GraphQLJobs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0109A82823141479C9CBD4A /* PoppinsBlack-VxOe.otf */ = {isa = PBXFileReference; name = "PoppinsBlack-VxOe.otf"; path = "../assets/fonts/PoppinsBlack-VxOe.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C43E439BDA6B438C8D082391 /* PoppinsBlackItalic-JXmK.otf */ = {isa = PBXFileReference; name = "PoppinsBlackItalic-JXmK.otf"; path = "../assets/fonts/PoppinsBlackItalic-JXmK.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C2B8C7B6EAB1416E8FE3918C /* PoppinsBold-GdJA.otf */ = {isa = PBXFileReference; name = "PoppinsBold-GdJA.otf"; path = "../assets/fonts/PoppinsBold-GdJA.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5134314BF7114EC9AF3F65CC /* PoppinsBoldItalic-jgZy.otf */ = {isa = PBXFileReference; name = "PoppinsBoldItalic-jgZy.otf"; path = "../assets/fonts/PoppinsBoldItalic-jgZy.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9E141C624B24A7E8FC7337E /* PoppinsExtrabold-zDdL.otf */ = {isa = PBXFileReference; name = "PoppinsExtrabold-zDdL.otf"; path = "../assets/fonts/PoppinsExtrabold-zDdL.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1483832692854BFFA32E9B13 /* PoppinsExtraboldItalic-5J8v.otf */ = {isa = PBXFileReference; name = "PoppinsExtraboldItalic-5J8v.otf"; path = "../assets/fonts/PoppinsExtraboldItalic-5J8v.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE68357B7FF74ED199404BB4 /* PoppinsExtralight-6Je1.otf */ = {isa = PBXFileReference; name = "PoppinsExtralight-6Je1.otf"; path = "../assets/fonts/PoppinsExtralight-6Je1.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E1C5823706C64FD8BFB5AC25 /* PoppinsExtralightItalic-yDBV.otf */ = {isa = PBXFileReference; name = "PoppinsExtralightItalic-yDBV.otf"; path = "../assets/fonts/PoppinsExtralightItalic-yDBV.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EAAB780248D34F8B8EAD14E1 /* PoppinsItalic-9nE2.otf */ = {isa = PBXFileReference; name = "PoppinsItalic-9nE2.otf"; path = "../assets/fonts/PoppinsItalic-9nE2.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		83E8DAF7CA9A40E090EECACC /* PoppinsLight-l4Zw.otf */ = {isa = PBXFileReference; name = "PoppinsLight-l4Zw.otf"; path = "../assets/fonts/PoppinsLight-l4Zw.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		90EE06670A6F4AEB956DFA2A /* PoppinsLightItalic-nexO.otf */ = {isa = PBXFileReference; name = "PoppinsLightItalic-nexO.otf"; path = "../assets/fonts/PoppinsLightItalic-nexO.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9909DE13391943EEBFD4BB64 /* PoppinsMedium-1JPv.otf */ = {isa = PBXFileReference; name = "PoppinsMedium-1JPv.otf"; path = "../assets/fonts/PoppinsMedium-1JPv.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7E62107963D840298AA66D7A /* PoppinsMediumItalic-REKE.otf */ = {isa = PBXFileReference; name = "PoppinsMediumItalic-REKE.otf"; path = "../assets/fonts/PoppinsMediumItalic-REKE.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7CEDA3F22AE2408499A3BB0C /* PoppinsRegular-B2Bw.otf */ = {isa = PBXFileReference; name = "PoppinsRegular-B2Bw.otf"; path = "../assets/fonts/PoppinsRegular-B2Bw.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BD5131B0E4004AA39044A81A /* PoppinsSemibold-8l8n.otf */ = {isa = PBXFileReference; name = "PoppinsSemibold-8l8n.otf"; path = "../assets/fonts/PoppinsSemibold-8l8n.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1602521F50CC4017A5F54155 /* PoppinsSemiboldItalic-Y132.otf */ = {isa = PBXFileReference; name = "PoppinsSemiboldItalic-Y132.otf"; path = "../assets/fonts/PoppinsSemiboldItalic-Y132.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3851BABF31AA4D04A2CCFF49 /* PoppinsThin-rO2B.otf */ = {isa = PBXFileReference; name = "PoppinsThin-rO2B.otf"; path = "../assets/fonts/PoppinsThin-rO2B.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E2BDD3788184678B6866862 /* PoppinsThinItalic-M4YP.otf */ = {isa = PBXFileReference; name = "PoppinsThinItalic-M4YP.otf"; path = "../assets/fonts/PoppinsThinItalic-M4YP.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				714DD8431E5B273CBA10933A /* libPods-GraphQLJobs-GraphQLJobsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80F35C747973ED944A267511 /* libPods-GraphQLJobs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* GraphQLJobsTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* GraphQLJobsTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = GraphQLJobsTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* GraphQLJobs */ = {
+			isa = PBXGroup;
+			children = (
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = GraphQLJobs;
+			sourceTree = "<group>";
+		};
+		2A2B239CD7884BE4E502961A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74D268DCC555303433435F97 /* Pods-GraphQLJobs.debug.xcconfig */,
+				73CFE930D6D32088381CE8CB /* Pods-GraphQLJobs.release.xcconfig */,
+				81D555E64EB67B3834BE274F /* Pods-GraphQLJobs-GraphQLJobsTests.debug.xcconfig */,
+				0B0179BE06452B7915CE0180 /* Pods-GraphQLJobs-GraphQLJobsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				FC85B405F51B3EFAF34ED2D7 /* libPods-GraphQLJobs.a */,
+				2922AEC65B2D1B84EEE56CF0 /* libPods-GraphQLJobs-GraphQLJobsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* GraphQLJobs */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* GraphQLJobsTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				2A2B239CD7884BE4E502961A /* Pods */,
+				51DC968DC2144F7C8D9AC1E9 /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* GraphQLJobs.app */,
+				00E356EE1AD99517003FC87E /* GraphQLJobsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51DC968DC2144F7C8D9AC1E9 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D0109A82823141479C9CBD4A /* PoppinsBlack-VxOe.otf */,
+				C43E439BDA6B438C8D082391 /* PoppinsBlackItalic-JXmK.otf */,
+				C2B8C7B6EAB1416E8FE3918C /* PoppinsBold-GdJA.otf */,
+				5134314BF7114EC9AF3F65CC /* PoppinsBoldItalic-jgZy.otf */,
+				A9E141C624B24A7E8FC7337E /* PoppinsExtrabold-zDdL.otf */,
+				1483832692854BFFA32E9B13 /* PoppinsExtraboldItalic-5J8v.otf */,
+				DE68357B7FF74ED199404BB4 /* PoppinsExtralight-6Je1.otf */,
+				E1C5823706C64FD8BFB5AC25 /* PoppinsExtralightItalic-yDBV.otf */,
+				EAAB780248D34F8B8EAD14E1 /* PoppinsItalic-9nE2.otf */,
+				83E8DAF7CA9A40E090EECACC /* PoppinsLight-l4Zw.otf */,
+				90EE06670A6F4AEB956DFA2A /* PoppinsLightItalic-nexO.otf */,
+				9909DE13391943EEBFD4BB64 /* PoppinsMedium-1JPv.otf */,
+				7E62107963D840298AA66D7A /* PoppinsMediumItalic-REKE.otf */,
+				7CEDA3F22AE2408499A3BB0C /* PoppinsRegular-B2Bw.otf */,
+				BD5131B0E4004AA39044A81A /* PoppinsSemibold-8l8n.otf */,
+				1602521F50CC4017A5F54155 /* PoppinsSemiboldItalic-Y132.otf */,
+				3851BABF31AA4D04A2CCFF49 /* PoppinsThin-rO2B.otf */,
+				4E2BDD3788184678B6866862 /* PoppinsThinItalic-M4YP.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* GraphQLJobsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "GraphQLJobsTests" */;
+			buildPhases = (
+				D295497EBBEB1C69B3DD0851 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				5647A5ECEBA87869AA9FE34D /* [CP] Embed Pods Frameworks */,
+				7A86CFEE58F6EDBD130B416B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = GraphQLJobsTests;
+			productName = GraphQLJobsTests;
+			productReference = 00E356EE1AD99517003FC87E /* GraphQLJobsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* GraphQLJobs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "GraphQLJobs" */;
+			buildPhases = (
+				9BFBB2933F8C060A14CEC9DA /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				4313FC0ECFEBD34E356A0CAE /* [CP] Embed Pods Frameworks */,
+				1181BFC20749044F50826E97 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GraphQLJobs;
+			productName = GraphQLJobs;
+			productReference = 13B07F961A680F5B00A75B9A /* GraphQLJobs.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "GraphQLJobs" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* GraphQLJobs */,
+				00E356ED1AD99517003FC87E /* GraphQLJobsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				1BDCDB006C2B486E98566A45 /* PoppinsBlack-VxOe.otf in Resources */,
+				93FB9331F4BC4E14814E9360 /* PoppinsBlackItalic-JXmK.otf in Resources */,
+				740CEF69BAE0499FBF25C820 /* PoppinsBold-GdJA.otf in Resources */,
+				6AE525AD6AAB46A685C84903 /* PoppinsBoldItalic-jgZy.otf in Resources */,
+				613C01AED7A44E4D971FA84E /* PoppinsExtrabold-zDdL.otf in Resources */,
+				BF7FEBFE7CBC42F2BD13052C /* PoppinsExtraboldItalic-5J8v.otf in Resources */,
+				D2B9792D0CC64B1A9EF2E205 /* PoppinsExtralight-6Je1.otf in Resources */,
+				9F5001F29D414DF9B421BBDA /* PoppinsExtralightItalic-yDBV.otf in Resources */,
+				8415BB6968934CD0B81C4BB7 /* PoppinsItalic-9nE2.otf in Resources */,
+				F5940EB7808D499B9A13B948 /* PoppinsLight-l4Zw.otf in Resources */,
+				53438CC05FC64335B59CA337 /* PoppinsLightItalic-nexO.otf in Resources */,
+				2790533EC17E450FA59F08D2 /* PoppinsMedium-1JPv.otf in Resources */,
+				3B1373A4FDF4465E84D902C1 /* PoppinsMediumItalic-REKE.otf in Resources */,
+				66EA87DEA4C64F0DB475D4C4 /* PoppinsRegular-B2Bw.otf in Resources */,
+				FC9273C7DF6C4EA89B40DD11 /* PoppinsSemibold-8l8n.otf in Resources */,
+				622D4C3067C24C97AB05E1D4 /* PoppinsSemiboldItalic-Y132.otf in Resources */,
+				FF5820EE054241A98DE0D098 /* PoppinsThin-rO2B.otf in Resources */,
+				966AE7BC752E407187C873F8 /* PoppinsThinItalic-M4YP.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		1181BFC20749044F50826E97 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4313FC0ECFEBD34E356A0CAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs/Pods-GraphQLJobs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5647A5ECEBA87869AA9FE34D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A86CFEE58F6EDBD130B416B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphQLJobs-GraphQLJobsTests/Pods-GraphQLJobs-GraphQLJobsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BFBB2933F8C060A14CEC9DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GraphQLJobs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D295497EBBEB1C69B3DD0851 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GraphQLJobs-GraphQLJobsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* GraphQLJobsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* GraphQLJobs */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81D555E64EB67B3834BE274F /* Pods-GraphQLJobs-GraphQLJobsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GraphQLJobsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphQLJobs.app/GraphQLJobs";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B0179BE06452B7915CE0180 /* Pods-GraphQLJobs-GraphQLJobsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = GraphQLJobsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphQLJobs.app/GraphQLJobs";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74D268DCC555303433435F97 /* Pods-GraphQLJobs.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = GraphQLJobs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = GraphQLJobs;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73CFE930D6D32088381CE8CB /* Pods-GraphQLJobs.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = GraphQLJobs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = GraphQLJobs;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "GraphQLJobsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "GraphQLJobs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "GraphQLJobs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}

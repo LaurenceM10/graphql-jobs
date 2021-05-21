@@ -5,4 +5,7 @@ export const colors = {
   // texts
   primaryText: '#333',
   accentText: '#007bff',
+
+  // icons
+  primaryIcon: '#444',
 };

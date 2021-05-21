@@ -25,7 +25,7 @@ function HomeScreen() {
             </Padding>
             <SizedBox height={12} />
             <Padding paddingHorizontal={20} paddingVertical={10}>
-              <InputSearch />
+              <InputSearch onChange={() => {}} />
             </Padding>
             <SizedBox height={22} />
             <Section title="Popular Companies">

@@ -14,6 +14,8 @@ target 'GraphQLJobs' do
 
   pod 'RNTextGradientView', :path => '../node_modules/react-native-text-gradient'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'GraphQLJobsTests' do
     inherit! :complete
     # Pods for testing

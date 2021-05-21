@@ -1,7 +1,10 @@
-
 import React from 'react';
 import {
-    SafeAreaView, View, ScrollView, KeyboardAvoidingView
+  SafeAreaView,
+  View,
+  ScrollView,
+  KeyboardAvoidingView,
+  StyleSheet,
 } from 'react-native';
 
 import PopularCompanies from 'components/popularCompanies';
@@ -12,27 +15,32 @@ import InputSearch from 'components/inputSearch';
 import Section from 'components/section';
 
 function HomeScreen() {
-    return (
-        <SafeAreaView style={{ backgroundColor: '#FAFAFA', flex: 1 }}>
-            <KeyboardAvoidingView style={{ flex: 1, backgroundColor: '#FFF' }} behavior="height">
-                <ScrollView>
-                    <View style={{ paddingTop: 18 }}>
-                        <Padding paddingHorizontal={22} paddingVertical={10} >
-                            <Header />
-                        </Padding>
-                        <SizedBox height={12} />
-                        <Padding paddingHorizontal={22} paddingVertical={10} >
-                            <InputSearch />
-                        </Padding>
-                        <SizedBox height={22} />
-                        <Section title="Popular Companies">
-                            <PopularCompanies />
-                        </Section>
-                    </View>
-                </ScrollView>
-            </KeyboardAvoidingView>
-        </SafeAreaView>
-    );
+  return (
+    <SafeAreaView style={styles.screen}>
+      <KeyboardAvoidingView style={styles.container} behavior="height">
+        <ScrollView>
+          <View style={{ paddingTop: 18 }}>
+            <Padding paddingHorizontal={20} paddingVertical={16}>
+              <Header />
+            </Padding>
+            <SizedBox height={12} />
+            <Padding paddingHorizontal={20} paddingVertical={10}>
+              <InputSearch />
+            </Padding>
+            <SizedBox height={22} />
+            <Section title="Popular Companies">
+              <PopularCompanies />
+            </Section>
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
+  );
 }
+
+const styles = StyleSheet.create({
+  screen: { backgroundColor: '#FAFAFA', flex: 1 },
+  container: { flex: 1, backgroundColor: '#FFF' },
+});
 
 export default HomeScreen;

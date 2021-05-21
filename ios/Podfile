@@ -12,6 +12,8 @@ target 'GraphQLJobs' do
     :hermes_enabled => false
   )
 
+  pod 'RNTextGradientView', :path => '../node_modules/react-native-text-gradient'
+
   target 'GraphQLJobsTests' do
     inherit! :complete
     # Pods for testing

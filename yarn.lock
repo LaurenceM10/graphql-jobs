@@ -5502,6 +5502,11 @@ react-native-shimmer@^0.6.0:
   dependencies:
     prop-types "^15.6.0"
 
+react-native-text-gradient@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/react-native-text-gradient/-/react-native-text-gradient-0.1.7.tgz#2b7a4c3dab59d50bb292b184f1d4ac214f73f06b"
+  integrity sha512-QuEwW8TMKBNI5ejmDFu3/SDJh5CIzOi5eL1xNzq8yBEwU5wHaloBxhQ9K0zc16GPkr3KgSUDyU4olQtiYje4mw==
+
 react-native@0.64.1:
   version "0.64.1"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.64.1.tgz#cd38f5b47b085549686f34eb0c9dcd466f307635"

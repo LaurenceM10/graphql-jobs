@@ -1,18 +1,48 @@
-import { COLORS } from 'core/presentation/styles/colors';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+
+// Components
+import TextGradient from 'components/textGradient';
+
+// Styles
+import { colors } from 'core/presentation/styles/colors';
+import { POPPINS } from 'core/presentation/styles/fonts';
 
 function Header() {
-    return (
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Text style={{
-                fontSize: 24,
-                color: COLORS.primaryColor,
-                fontWeight: '300'
-            }}>Find Your Dream Job</Text>
-            <View style={{ width: 48, height: 48, backgroundColor: '#EEE', borderRadius: 14 }} />
-        </View>
-    )
+  return (
+    <View style={styles.header}>
+      <View style={{ flexDirection: 'column', width: '60%' }}>
+        <Text style={styles.titleLight}>Find Your</Text>
+        <TextGradient style={styles.titleSemi}>Perfect Job</TextGradient>
+      </View>
+      <View
+        style={{
+          width: 54,
+          height: 54,
+          backgroundColor: '#EEE',
+          borderRadius: 14,
+        }}
+      />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  titleLight: {
+    fontSize: 28,
+    color: colors.primaryText,
+    fontFamily: POPPINS.light,
+    letterSpacing: 1,
+  },
+  titleSemi: {
+    fontSize: 33,
+    letterSpacing: 1.5,
+    fontFamily: POPPINS.semibold,
+  },
+});
 
 export default Header;

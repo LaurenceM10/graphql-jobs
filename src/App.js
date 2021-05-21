@@ -1,11 +1,9 @@
 import React from 'react';
 
-import {
-  ApolloProvider
-} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 
-import Navigation from '@navigation'
-import client from '@core/apollo/client';
+import Navigation from 'navigation';
+import client from 'core/apollo/client';
 
 const App = () => {
   return (
@@ -14,6 +12,5 @@ const App = () => {
     </ApolloProvider>
   );
 };
-
 
 export default App;

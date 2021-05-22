@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 // Components
-import TextGradient from 'components/textGradient';
+import TextGradient from 'components/shared/textGradient';
 
 // Styles
 import { colors } from 'core/presentation/styles/colors';
@@ -11,7 +11,7 @@ import { POPPINS } from 'core/presentation/styles/fonts';
 function Header() {
   return (
     <View style={styles.header}>
-      <View style={{ flexDirection: 'column', width: '60%' }}>
+      <View style={{ flexDirection: 'column', width: '70%' }}>
         <Text style={styles.titleLight}>Find Your</Text>
         <TextGradient style={styles.titleSemi}>Perfect Job</TextGradient>
       </View>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   titleSemi: {
-    fontSize: 33,
+    fontSize: 35,
     letterSpacing: 1.5,
     fontFamily: POPPINS.semibold,
   },

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import { POPPINS } from '../../core/presentation/styles/fonts';
+import { colors } from '../../core/presentation/styles/colors';
 
-function CardLoading() {
+function CompaniesLoading() {
   return (
     <View style={{ flexDirection: 'row' }}>
       {Array.from({ length: 3 }, (_, index) => (
@@ -10,7 +12,7 @@ function CardLoading() {
             style={[
               styles.imageContainer,
               styles.image,
-              { backgroundColor: '#eaeaea' },
+              { backgroundColor: colors.placeholder },
             ]}
           />
           <View style={styles.placeholderText} />
@@ -19,6 +21,7 @@ function CardLoading() {
     </View>
   );
 }
+
 function CompanyCard({ company }) {
   return (
     <View style={styles.card}>
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     marginRight: 4,
     paddingVertical: 16,
-    backgroundColor: 'rgba(200, 200, 200, .2)',
+    backgroundColor: '#FFF',
     borderRadius: 14,
   },
   imageContainer: {
@@ -49,15 +52,19 @@ const styles = StyleSheet.create({
   },
   image: { width: 55, height: 55 },
   placeholderCard: {
-    backgroundColor: 'rgba(225, 225, 225, .2)',
+    backgroundColor: '#FFF',
   },
-  title: { fontSize: 16, color: '#555' },
+  title: {
+    fontSize: 16,
+    color: colors.primaryColor,
+    fontFamily: POPPINS.light,
+  },
   placeholderText: {
     width: 100,
     height: 18,
-    backgroundColor: '#eaeaea',
+    backgroundColor: colors.placeholder,
     borderRadius: 12,
   },
 });
 
-export { CompanyCard, CardLoading };
+export { CompanyCard, CompaniesLoading };

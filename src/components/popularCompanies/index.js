@@ -1,25 +1,28 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 import { usePopularCompanies } from 'repositories/companies';
-import { CompanyCard, CardLoading } from 'components/popularCompanies/card';
+import {
+  CompanyCard,
+  CompaniesLoading,
+} from 'components/popularCompanies/card';
 
-function CompanyList() {
+function PopularCompanies() {
   const { companies, loading } = usePopularCompanies();
   const renderItem = ({ item }) => <CompanyCard company={item} />;
 
   if (loading) {
-    return <CardLoading />;
+    return <CompaniesLoading />;
   }
 
   return (
     <FlatList
       data={companies}
+      horizontal={true}
       renderItem={renderItem}
       keyExtractor={item => item.id}
-      horizontal={true}
       showsHorizontalScrollIndicator={false}
     />
   );
 }
 
-export default CompanyList;
+export default PopularCompanies;

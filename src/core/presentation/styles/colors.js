@@ -8,4 +8,10 @@ export const colors = {
 
   // icons
   primaryIcon: '#444',
+
+  // cards
+  accentCard: '#FFFFFF',
+
+  // loading
+  placeholder: '#eaeaea',
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import Padding from 'components/padding';
+import Padding from 'components/shared/padding';
 import { colors } from 'core/presentation/styles/colors';
-import { POPPINS } from '../../core/presentation/styles/fonts';
+import { POPPINS } from '../../../core/presentation/styles/fonts';
 
 function Section({ title, children }) {
   // TODO: consider rendering 2 childs (header, body),

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import { POPPINS } from 'core/presentation/styles/fonts';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { colors } from '../../core/presentation/styles/colors';
+import { colors } from '../../../core/presentation/styles/colors';
 
 function InputSearch({ onChange }) {
   return (
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingVertical: 10,
     paddingHorizontal: 12,
-    backgroundColor: 'rgba(100, 100, 100, .1)',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     flexDirection: 'row',
     alignItems: 'center',
   },

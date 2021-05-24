@@ -6,6 +6,38 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { colors } from 'core/presentation/styles/colors';
 import { POPPINS } from 'core/presentation/styles/fonts';
 
+const ShimmerText = ({ width = 30, height = 16 }) => (
+  <View
+    style={{
+      width,
+      height,
+      marginBottom: 4,
+      borderRadius: 12,
+      backgroundColor: '#ddd',
+    }}
+  />
+);
+
+function JobLoadingCard() {
+  return (
+    <View style={styles.card}>
+      <View style={styles.logoContainer}>
+        <View style={styles.logo} />
+      </View>
+      <View style={styles.content}>
+        <View>
+          <ShimmerText width="80%" height={13} />
+          <ShimmerText width="40%" height={12.5} />
+        </View>
+        <View style={styles.footer}>
+          <ShimmerText width={65} height={12.5} />
+          <ShimmerText width={65} height={12.5} />
+        </View>
+      </View>
+    </View>
+  );
+}
+
 function JobCard({ job }) {
   const { title, company, commitment, locationNames } = job;
 
@@ -91,3 +123,4 @@ const styles = StyleSheet.create({
 });
 
 export default JobCard;
+export { JobLoadingCard };

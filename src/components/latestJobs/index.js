@@ -1,33 +1,21 @@
 import React from 'react';
 import { View } from 'react-native';
-import JobsCarousel from 'components/jobsCarousel';
-import { useLatestJobs } from 'repositories/jobs';
-import { colors } from '../../core/presentation/styles/colors';
 
-function JobsLoading() {
-  return (
-    <View
-      style={{
-        height: 190,
-        width: 345,
-        marginVertical: 0,
-        marginHorizontal: 7,
-        borderRadius: 15,
-        backgroundColor: colors.accentCard,
-        alignSelf: 'center',
-        margin: 'auto',
-        flexDirection: 'column',
-        padding: 16,
-      }}
-    />
-  );
-}
+// Components
+import JobsCarousel from 'components/jobsCarousel';
+import { JobLoadingCard } from 'components/jobCard';
+
+import { useLatestJobs } from 'repositories/jobs';
 
 function LatestJobs() {
   const { jobs, loading } = useLatestJobs();
 
   if (loading) {
-    return <JobsLoading />;
+    return (
+      <View style={{ marginBottom: 32 }}>
+        <JobLoadingCard />
+      </View>
+    );
   }
 
   return <JobsCarousel jobs={jobs} />;

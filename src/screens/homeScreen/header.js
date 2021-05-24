@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   titleSemi: {
-    fontSize: 35,
+    fontSize: 34,
     letterSpacing: 1.5,
     fontFamily: POPPINS.semibold,
   },

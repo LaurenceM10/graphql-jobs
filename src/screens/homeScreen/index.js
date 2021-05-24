@@ -30,12 +30,12 @@ function HomeScreen() {
               <InputSearch onChange={() => {}} />
             </Padding>
             <SizedBox height={12} />
-            <Section title="Popular Companies">
-              <PopularCompanies />
-            </Section>
-            <SizedBox height={12} />
             <Section title="Latest Jobs">
               <LatestJobs />
+            </Section>
+            <SizedBox height={12} />
+            <Section title="Popular Companies">
+              <PopularCompanies />
             </Section>
           </View>
         </ScrollView>

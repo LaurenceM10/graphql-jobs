@@ -5,6 +5,10 @@ export const JOBS_QUERY = gql`
     jobs {
       id
       title
+      postedAt
+      commitment {
+        title
+      }
       company {
         id
         name

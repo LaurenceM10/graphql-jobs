@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   action: {
     fontSize: 14,
-    color: colors.accentText,
+    color: colors.secondaryColor,
     fontFamily: POPPINS.light,
   },
 });

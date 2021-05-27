@@ -6,6 +6,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { colors } from 'core/presentation/styles/colors';
 import { POPPINS } from 'core/presentation/styles/fonts';
 
+const defaultCompanyLogo =
+  'https://pics.freeicons.io/uploads/icons/png/2799012341582884271-512.png';
+
 const ShimmerText = ({ width = 30, height = 16 }) => (
   <View
     style={{
@@ -44,7 +47,10 @@ function JobCard({ job }) {
   return (
     <View style={styles.card}>
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={{ uri: company?.logoUrl }} />
+        <Image
+          style={styles.logo}
+          source={{ uri: company?.logoUrl ?? defaultCompanyLogo }}
+        />
       </View>
       <View style={styles.content}>
         <View>

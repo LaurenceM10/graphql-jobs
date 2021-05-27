@@ -28,7 +28,7 @@ export function useJobSearch() {
           },
         },
         page: 0,
-        perPage: 12,
+        perPage: 7,
       },
       fetchPolicy: 'no-cache',
     });

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { FlatList } from 'react-native';
 
 import Padding from 'components/shared/padding';
 import JobCard, { JobLoadingCard } from 'components/jobCard';
+import SizedBox from '../shared/sizedBox';
 
 function JobListLoading({ length = 7 }) {
   return Array.from({ length }, (_, i) => {
@@ -15,14 +16,19 @@ function JobListLoading({ length = 7 }) {
 }
 
 function JobList({ jobs }) {
-  const renderItem = ({ item }) => <JobCard job={item} />;
+  const renderItem = ({ item }) => (
+    <>
+      <JobCard job={item} />
+      <SizedBox height={6} />
+    </>
+  );
 
   return (
     <FlatList
       data={jobs}
       renderItem={renderItem}
       keyExtractor={item => item.id}
-      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
     />
   );
 }

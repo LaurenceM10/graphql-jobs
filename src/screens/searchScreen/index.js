@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import {
   Text,
   View,
-  ScrollView,
   StyleSheet,
   SafeAreaView,
   KeyboardAvoidingView,
 } from 'react-native';
 
-import JobCard from '../../components/jobCard';
 import Padding from 'components/shared/padding';
 import SizedBox from 'components/shared/sizedBox';
-import JobList, { JobListLoading } from 'components/jobList';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import InputSearch from 'components/shared/inputSearch';
+import JobList, { JobListLoading } from 'components/jobList';
 import { SharedElement } from 'react-navigation-shared-element';
 
 import { useJobSearch } from 'repositories/jobs';
 import { useDebouncedCallback } from 'use-debounce';
+import { colors } from '../../core/presentation/styles/colors';
+import { POPPINS } from '../../core/presentation/styles/fonts';
 
 function SearchScreen() {
   const {
@@ -38,8 +39,22 @@ function SearchScreen() {
     }
 
     return (
-      <View style={{ flex: 1 }}>
-        <Text>Search for your new job</Text>
+      <View
+        style={{
+          height: 300,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Icon size={56} name="search" />
+        <SizedBox height={24} />
+        <Text
+          style={{
+            fontSize: 16,
+            fontFamily: POPPINS.light,
+            color: colors.primaryText,
+          }}>
+          Search for your new job
+        </Text>
       </View>
     );
   };
@@ -53,9 +68,11 @@ function SearchScreen() {
             <InputSearch autoFocus onChange={onChangeSearch} />
           </SharedElement>
         </Padding>
-        <Padding paddingHorizontal={18} paddingVertical={10}>
-          <SearchContent />
-        </Padding>
+        <View style={{ flex: 1 }}>
+          <Padding paddingHorizontal={18} paddingVertical={0}>
+            <SearchContent />
+          </Padding>
+        </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

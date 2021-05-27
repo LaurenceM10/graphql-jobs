@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
 import HomeScreen from 'screens/homeScreen';
+import SearchScreen from 'screens/searchScreen';
 
-const Stack = createStackNavigator();
+const Stack = createSharedElementStackNavigator();
 
 export default function Navigation() {
   return (
@@ -15,6 +16,22 @@ export default function Navigation() {
           component={HomeScreen}
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{
+            headerShown: false,
+            transitionSpec: {
+              open: { animation: 'timing', config: { duration: 500 } },
+              close: { animation: 'timing', config: { duration: 400 } },
+            },
+          }}
+          sharedElementsConfig={(_, otherRoute) => {
+            if (otherRoute.name === 'Home') {
+              return [{ id: 'search', animation: 'fade' }];
+            }
           }}
         />
       </Stack.Navigator>

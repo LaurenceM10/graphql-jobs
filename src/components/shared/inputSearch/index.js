@@ -4,7 +4,7 @@ import { POPPINS } from 'core/presentation/styles/fonts';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colors } from '../../../core/presentation/styles/colors';
 
-function InputSearch({ onChange }) {
+function InputSearch({ onChange, onFocus, autoFocus }) {
   return (
     <View style={styles.container}>
       <Icon
@@ -14,10 +14,12 @@ function InputSearch({ onChange }) {
         color={colors.accentText}
       />
       <TextInput
+        onFocus={onFocus}
+        autoFocus={autoFocus}
+        onChangeText={onChange}
         placeholder="Search a job"
         placeholderTextColor="#888"
         style={styles.inputText}
-        onChangeText={onChange}
       />
     </View>
   );

@@ -24,10 +24,12 @@
     "react-native-reanimated": "^2.1.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.2.0",
+    "react-native-shared-element": "^0.7.0",
     "react-native-shimmer": "^0.6.0",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-text-gradient": "^0.1.7",
-    "react-native-vector-icons": "^8.1.0"
+    "react-native-vector-icons": "^8.1.0",
+    "react-navigation-shared-element": "^5.0.0-alpha1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

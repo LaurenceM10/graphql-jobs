@@ -13,10 +13,13 @@ export function useLatestJobs() {
 
 export function useJobSearch() {
   const [jobs, setJobs] = useState([]);
+  const [searching, setSearching] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [fetchJobs, { data, loading, error }] = useLazyQuery(SEARCH_JOB);
 
-  const search = useCallback(() => {
+  const search = () => {
+    setSearching(true);
+
     fetchJobs({
       variables: {
         where: {
@@ -24,15 +27,21 @@ export function useJobSearch() {
             title_contains: searchTerm,
           },
         },
+        page: 0,
+        perPage: 12,
       },
       fetchPolicy: 'no-cache',
     });
-  }, [fetchJobs, searchTerm]);
+  };
 
   useEffect(() => {
-    setJobs([]);
+    if (!searchTerm) {
+      setJobs([]);
+      return;
+    }
+
     search();
-  }, [searchTerm, search]);
+  }, [searchTerm]);
 
   useEffect(() => {
     const fullTimeJobs = data?.commitments[0]?.jobs ?? [];
@@ -42,6 +51,8 @@ export function useJobSearch() {
     if (jobList) {
       setJobs(prevJobs => [...prevJobs, ...jobList]);
     }
+
+    setSearching(false);
   }, [data]);
 
   return {
@@ -50,7 +61,7 @@ export function useJobSearch() {
     },
     state: {
       jobs,
-      loading,
+      loading: loading || searching,
       error,
     },
   };

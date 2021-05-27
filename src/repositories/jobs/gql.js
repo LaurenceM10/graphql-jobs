@@ -31,9 +31,9 @@ export const JOBS_QUERY = gql`
 
 export const SEARCH_JOB = gql`
   ${JOB}
-  query jobs($where: JobWhereInput) {
+  query jobs($where: JobWhereInput, $page: Int, $perPage: Int) {
     commitments {
-      jobs(where: $where) {
+      jobs(where: $where, skip: $page, first: $perPage) {
         ...JobFields
       }
     }

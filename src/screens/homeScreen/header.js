@@ -5,7 +5,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import TextGradient from 'components/shared/textGradient';
 
 // Styles
-import { colors } from 'core/presentation/styles/colors';
+import { colors } from 'core/presentation/styles/theme';
 import { POPPINS } from 'core/presentation/styles/fonts';
 
 function Header() {

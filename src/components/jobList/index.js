@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 
 import Padding from 'components/shared/padding';

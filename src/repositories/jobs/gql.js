@@ -3,6 +3,7 @@ import { gql } from '@apollo/client';
 export const JOB = gql`
   fragment JobFields on Job {
     id
+    slug
     title
     commitment {
       title

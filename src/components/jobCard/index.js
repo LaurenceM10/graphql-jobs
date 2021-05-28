@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Styles
-import { colors } from 'core/presentation/styles/colors';
+import { colors } from 'core/presentation/styles/theme';
 import { POPPINS } from 'core/presentation/styles/fonts';
 
 const defaultCompanyLogo =

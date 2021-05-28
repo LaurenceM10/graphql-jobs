@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import { POPPINS } from 'core/presentation/styles/fonts';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { colors } from '../../../core/presentation/styles/colors';
+import { colors } from '../../../core/presentation/styles/theme';
 
 function InputSearch({ onChange, onFocus, autoFocus }) {
   return (

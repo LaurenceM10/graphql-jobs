@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { POPPINS } from '../../core/presentation/styles/fonts';
-import { colors } from '../../core/presentation/styles/colors';
+import { colors } from '../../core/presentation/styles/theme';
 
 function CompaniesLoading() {
   return (

@@ -6,7 +6,7 @@ import JobCard from 'components/jobCard';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 // Styles
-import { colors } from 'core/presentation/styles/colors';
+import { colors } from 'core/presentation/styles/theme';
 
 function CarouselPagination({ activeSlide, dotsLength }) {
   return (

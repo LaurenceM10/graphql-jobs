@@ -4,6 +4,7 @@ import { createSharedElementStackNavigator } from 'react-navigation-shared-eleme
 
 import HomeScreen from 'screens/homeScreen';
 import SearchScreen from 'screens/searchScreen';
+import JobDetailScreen from 'screens/jobDetailScreen';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -12,8 +13,8 @@ export default function Navigation() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="JobDetail"
+          component={JobDetailScreen}
           options={{
             headerShown: false,
           }}

@@ -1,6 +1,6 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { useLazyQuery, useQuery } from '@apollo/client';
-import { JOBS_QUERY, SEARCH_JOB } from './gql';
+import { JOB_DESCRIPTION_QUERY, JOBS_QUERY, SEARCH_JOB } from './gql';
 
 // LATEST JOBS should be the firsts seven jobs with company logo url
 export function useLatestJobs() {
@@ -11,7 +11,7 @@ export function useLatestJobs() {
   return { jobs, loading, error };
 }
 
-export function useJobSearch() {
+export function useJobsSearch() {
   const [jobs, setJobs] = useState([]);
   const [searching, setSearching] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -62,6 +62,26 @@ export function useJobSearch() {
     state: {
       jobs,
       loading: loading || searching,
+      error,
+    },
+  };
+}
+
+export function useJobDetail({ jobSlug, companySlug }) {
+  const { data, loading, error } = useQuery(JOB_DESCRIPTION_QUERY, {
+    variables: {
+      input: {
+        jobSlug,
+        companySlug,
+      },
+    },
+  });
+  console.log({ dataX: data?.job });
+
+  return {
+    state: {
+      detail: data?.job,
+      loading,
       error,
     },
   };

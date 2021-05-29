@@ -7,6 +7,7 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 // Styles
 import { colors } from 'core/presentation/styles/theme';
+import { useNavigation } from '@react-navigation/native';
 
 function CarouselPagination({ activeSlide, dotsLength }) {
   return (
@@ -25,9 +26,14 @@ function CarouselPagination({ activeSlide, dotsLength }) {
 }
 
 function JobsCarousel({ jobs }) {
+  const navigation = useNavigation();
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const renderItem = ({ item, index }) => <JobCard key={index} job={item} />;
+  const renderItem = ({ item, index }) => {
+    const goToDetail = () => navigation.navigate('JobDetail', { job: item });
+
+    return <JobCard key={index} job={item} onPress={goToDetail} />;
+  };
 
   const { width } = useWindowDimensions();
   return (

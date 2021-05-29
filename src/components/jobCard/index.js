@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // Styles
@@ -41,36 +47,38 @@ function JobLoadingCard() {
   );
 }
 
-function JobCard({ job }) {
+function JobCard({ job, onPress }) {
   const { title, company, commitment, locationNames } = job;
 
   return (
-    <View style={styles.card}>
-      <View style={styles.logoContainer}>
-        <Image
-          style={styles.logo}
-          source={{ uri: company?.logoUrl ?? defaultCompanyLogo }}
-        />
-      </View>
-      <View style={styles.content}>
-        <View>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.companyName}>{company?.name}</Text>
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <View style={styles.logoContainer}>
+          <Image
+            style={styles.logo}
+            source={{ uri: company?.logoUrl ?? defaultCompanyLogo }}
+          />
         </View>
-        <View style={styles.footer}>
-          <View style={{ flexDirection: 'row' }}>
-            <Icon
-              size={14}
-              name={locationNames ? 'location' : 'home'}
-              style={{ marginRight: 4 }}
-              color={colors.primaryText}
-            />
-            <Text style={styles.location}>{locationNames ?? 'Remote'}</Text>
+        <View style={styles.content}>
+          <View>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.companyName}>{company?.name}</Text>
           </View>
-          <Text style={styles.commitment}>{commitment?.title}</Text>
+          <View style={styles.footer}>
+            <View style={{ flexDirection: 'row' }}>
+              <Icon
+                size={14}
+                name={locationNames ? 'location' : 'home'}
+                style={{ marginRight: 4 }}
+                color={colors.primaryText}
+              />
+              <Text style={styles.location}>{locationNames ?? 'Remote'}</Text>
+            </View>
+            <Text style={styles.commitment}>{commitment?.title}</Text>
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 

@@ -40,3 +40,12 @@ export const SEARCH_JOB = gql`
     }
   }
 `;
+
+export const JOB_DESCRIPTION_QUERY = gql`
+  query job($input: JobInput!) {
+    job(input: $input) {
+      id
+      description
+    }
+  }
+`;

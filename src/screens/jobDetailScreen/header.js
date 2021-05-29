@@ -60,7 +60,7 @@ function Header(props) {
             }}>
             <Icon size={14} name={'location'} color={colors.primaryColor} />
             <SizedBox width={6} />
-            {location}
+            {location ?? 'Remote'}
           </Text>
         </View>
       </View>

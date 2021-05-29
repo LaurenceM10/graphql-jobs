@@ -5,18 +5,43 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
 } from 'react-native';
-import Padding from 'components/shared/padding';
-import Section from 'components/shared/section';
-import Header from 'screens/jobDetailScreen/header';
 
-function JobDetailScreen() {
+import Header from 'screens/jobDetailScreen/header';
+import Markdown from 'react-native-markdown-display';
+
+import { useJobDetail } from 'repositories/jobs';
+import Padding from '../../components/shared/padding';
+
+function JobDetailScreen({ route }) {
+  const { job } = route.params;
+  const { title, slug, company, commitment, locationNames } = job;
+  const {
+    state: { detail },
+  } = useJobDetail({
+    jobSlug: slug,
+    companySlug: company.slug,
+  });
+
+  const renderContent = () => {
+    if (detail) {
+      return <Markdown>{detail?.description}</Markdown>;
+    }
+
+    return null;
+  };
+
   return (
     <SafeAreaView style={styles.screen}>
       <KeyboardAvoidingView style={styles.container} behavior="height">
         <ScrollView>
-          <Header />
-          <Padding paddingHorizontal={16} paddingVertical={10}>
-            <Section title="Overview" />
+          <Header
+            title={title}
+            commitment={commitment.title}
+            location={locationNames}
+            logoUrl={company.logoUrl}
+          />
+          <Padding paddingVertical={6} paddingHorizontal={18}>
+            {renderContent()}
           </Padding>
         </ScrollView>
       </KeyboardAvoidingView>

@@ -14,7 +14,7 @@ import InputSearch from 'components/shared/inputSearch';
 import JobList, { JobListLoading } from 'components/jobList';
 import { SharedElement } from 'react-navigation-shared-element';
 
-import { useJobSearch } from 'repositories/jobs';
+import { useJobsSearch } from 'repositories/jobs';
 import { useDebouncedCallback } from 'use-debounce';
 import { colors } from '../../core/presentation/styles/theme';
 import { POPPINS } from '../../core/presentation/styles/fonts';
@@ -23,7 +23,7 @@ function SearchScreen() {
   const {
     operations: { setSearchTerm },
     state: { jobs, loading, error },
-  } = useJobSearch();
+  } = useJobsSearch();
 
   const onChangeSearch = useDebouncedCallback(value => {
     setSearchTerm(value);

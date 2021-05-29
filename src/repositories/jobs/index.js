@@ -76,7 +76,6 @@ export function useJobDetail({ jobSlug, companySlug }) {
       },
     },
   });
-  console.log({ dataX: data?.job });
 
   return {
     state: {

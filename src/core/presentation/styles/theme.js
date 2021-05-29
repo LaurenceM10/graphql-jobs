@@ -1,6 +1,7 @@
 export const colors = {
   primaryColor: '#007bff',
   secondaryColor: '#00ccff',
+  darkColor: '#001530',
 
   // texts
   primaryText: '#333',

@@ -1,16 +1,19 @@
 import React from 'react';
 import {
+  Text,
+  View,
   StyleSheet,
   ScrollView,
   SafeAreaView,
   KeyboardAvoidingView,
 } from 'react-native';
 
+import Markdown from 'components/markdown';
+import Padding from 'components/shared/padding';
 import Header from 'screens/jobDetailScreen/header';
-import Markdown from 'react-native-markdown-display';
+import Footer from 'screens/jobDetailScreen/footer';
 
 import { useJobDetail } from 'repositories/jobs';
-import Padding from '../../components/shared/padding';
 
 function JobDetailScreen({ route }) {
   const { job } = route.params;
@@ -33,17 +36,20 @@ function JobDetailScreen({ route }) {
   return (
     <SafeAreaView style={styles.screen}>
       <KeyboardAvoidingView style={styles.container} behavior="height">
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Header
             title={title}
             commitment={commitment.title}
             location={locationNames}
             logoUrl={company.logoUrl}
           />
-          <Padding paddingVertical={6} paddingHorizontal={18}>
-            {renderContent()}
-          </Padding>
+          <View style={styles.content}>
+            <Padding paddingVertical={12} paddingHorizontal={22}>
+              {renderContent()}
+            </Padding>
+          </View>
         </ScrollView>
+        <Footer />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -52,6 +58,12 @@ function JobDetailScreen({ route }) {
 const styles = StyleSheet.create({
   screen: { backgroundColor: '#FAFAFA', flex: 1 },
   container: { flex: 1, backgroundColor: '#f4f4f8' },
+  content: {
+    flex: 0,
+    borderTopEndRadius: 35,
+    backgroundColor: '#fff',
+    borderTopStartRadius: 35,
+  },
 });
 
 export default JobDetailScreen;

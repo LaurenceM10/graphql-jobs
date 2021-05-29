@@ -71,10 +71,8 @@ function Header(props) {
 const styles = StyleSheet.create({
   header: {
     height: 250,
-    justifyContent: 'center',
     alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
+    justifyContent: 'center',
   },
   logo: {
     width: 65,

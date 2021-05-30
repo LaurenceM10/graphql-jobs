@@ -49,7 +49,7 @@ export function useJobsSearch() {
     const jobList = [...fullTimeJobs, ...partTimeJobs];
 
     if (jobList) {
-      setJobs(prevJobs => [...prevJobs, ...jobList]);
+      setJobs(prevJobs => jobList);
     }
 
     setSearching(false);
@@ -60,7 +60,7 @@ export function useJobsSearch() {
       setSearchTerm,
     },
     state: {
-      jobs,
+      jobs: !jobs.length && !searchTerm ? null : jobs,
       loading: loading || searching,
       error,
     },

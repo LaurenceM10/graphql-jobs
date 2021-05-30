@@ -15,14 +15,6 @@ function Header() {
         <Text style={styles.titleLight}>Find Your</Text>
         <TextGradient style={styles.titleSemi}>Perfect Job</TextGradient>
       </View>
-      <View
-        style={{
-          width: 54,
-          height: 54,
-          backgroundColor: '#EEE',
-          borderRadius: 14,
-        }}
-      />
     </View>
   );
 }

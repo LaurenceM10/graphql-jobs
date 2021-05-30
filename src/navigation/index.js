@@ -35,10 +35,17 @@ export default function Navigation() {
           }}
           sharedElementsConfig={route => {
             const {
-              job: { id, logoUrl },
+              job: {
+                id,
+                company: { logoUrl },
+                title,
+              },
             } = route.params;
 
-            return [{ id, animation: 'fade' }];
+            return [
+              { id: `${id}${logoUrl}`, animation: 'fade' },
+              { id: `${id}${title}`, animation: 'fade' },
+            ];
           }}
         />
         <Stack.Screen

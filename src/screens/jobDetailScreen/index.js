@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Text,
   View,
   StyleSheet,
   ScrollView,
+  Dimensions,
   SafeAreaView,
-  KeyboardAvoidingView,
+  LayoutAnimation,
 } from 'react-native';
 
 import Markdown from 'components/markdown';
@@ -27,40 +27,39 @@ function JobDetailScreen({ route }) {
 
   const renderContent = () => {
     if (detail) {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
+
       return <Markdown>{detail?.description}</Markdown>;
     }
-
-    return null;
   };
 
   return (
     <SafeAreaView style={styles.screen}>
-      <KeyboardAvoidingView style={styles.container} behavior="height">
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <Header
-            id={id}
-            title={title}
-            location={locationNames}
-            logoUrl={company.logoUrl}
-            commitment={commitment.title}
-          />
-          <View style={styles.content}>
-            <Padding paddingVertical={18} paddingHorizontal={32}>
-              {renderContent()}
-            </Padding>
-          </View>
-        </ScrollView>
-        <Footer />
-      </KeyboardAvoidingView>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <Header
+          id={id}
+          title={title}
+          location={locationNames}
+          logoUrl={company.logoUrl}
+          commitment={commitment.title}
+        />
+        <View style={styles.content}>
+          <Padding paddingVertical={18} paddingHorizontal={32}>
+            {renderContent()}
+          </Padding>
+        </View>
+      </ScrollView>
+      <Footer />
     </SafeAreaView>
   );
 }
 
+const screenHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   screen: { backgroundColor: '#FAFAFA', flex: 1 },
   container: { flex: 1, backgroundColor: '#f4f4f8' },
   content: {
-    flex: 0,
+    minHeight: screenHeight - 250,
     backgroundColor: '#fff',
     borderTopEndRadius: 45,
     borderTopStartRadius: 45,

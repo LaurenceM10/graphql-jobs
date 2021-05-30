@@ -6,6 +6,9 @@ import {
   Image,
   TouchableWithoutFeedback,
 } from 'react-native';
+
+import ShimmerText from 'components/shared/shimmerText';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import { SharedElement } from 'react-navigation-shared-element';
 
@@ -15,18 +18,6 @@ import { POPPINS } from 'core/presentation/styles/fonts';
 
 const defaultCompanyLogo =
   'https://pics.freeicons.io/uploads/icons/png/2799012341582884271-512.png';
-
-const ShimmerText = ({ width = 30, height = 16 }) => (
-  <View
-    style={{
-      width,
-      height,
-      marginBottom: 4,
-      borderRadius: 12,
-      backgroundColor: '#ddd',
-    }}
-  />
-);
 
 function JobLoadingCard() {
   return (
@@ -54,17 +45,19 @@ function JobCard({ job, onPress }) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <SharedElement id={id}>
-          <View style={styles.logoContainer}>
+        <View style={styles.logoContainer}>
+          <SharedElement id={`${id}${company?.logoUrl}`}>
             <Image
               style={styles.logo}
               source={{ uri: company?.logoUrl ?? defaultCompanyLogo }}
             />
-          </View>
-        </SharedElement>
+          </SharedElement>
+        </View>
         <View style={styles.content}>
           <View>
-            <Text style={styles.title}>{title}</Text>
+            <SharedElement id={`${id}${title}`}>
+              <Text style={styles.title}>{title}</Text>
+            </SharedElement>
             <Text style={styles.companyName}>{company?.name}</Text>
           </View>
           <View style={styles.footer}>

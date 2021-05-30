@@ -9,12 +9,36 @@ import { colors } from 'core/presentation/styles/theme';
 import { POPPINS } from 'core/presentation/styles/fonts';
 import { SharedElement } from 'react-navigation-shared-element';
 
+function Feature(props: { location: any }) {
+  return (
+    <View
+      style={{
+        borderRadius: 12,
+        paddingVertical: 8,
+        paddingHorizontal: 18,
+        backgroundColor: 'rgba(0, 123,255, .06)',
+        flexDirection: 'row',
+      }}>
+      <Icon size={14} name={'location'} color={colors.primaryColor} />
+      <SizedBox width={6} />
+      <Text
+        style={{
+          fontFamily: POPPINS.light,
+          fontSize: 14,
+          color: colors.primaryColor,
+        }}>
+        {props.location ?? 'Remote'}
+      </Text>
+    </View>
+  );
+}
+
 function Header(props) {
   const { id, logoUrl, title, location, commitment } = props;
 
   return (
     <View style={styles.header}>
-      <SharedElement id={id}>
+      <SharedElement id={`${id}${logoUrl}`}>
         <Image
           style={styles.logo}
           source={{
@@ -23,47 +47,33 @@ function Header(props) {
         />
       </SharedElement>
       <SizedBox height={18} />
-      <TextGradient
-        style={styles.jobTitle}
-        containerStyles={styles.textGradientContainer}>
-        {title}
-      </TextGradient>
+      <SharedElement id={`${id}${title}`}>
+        <TextGradient
+          style={styles.jobTitle}
+          containerStyles={styles.textGradientContainer}>
+          {title}
+        </TextGradient>
+      </SharedElement>
       <SizedBox height={20} />
       <View style={styles.labelContainer}>
+        <Feature location={location} />
         <View
           style={{
             borderRadius: 12,
             paddingVertical: 8,
             paddingHorizontal: 18,
             backgroundColor: colors.primaryColor,
+            flexDirection: 'row',
           }}>
+          <Icon size={14} name={'time'} color="#FFF" />
+          <SizedBox width={6} />
           <Text
             style={{
               fontFamily: POPPINS.light,
               fontSize: 14,
               color: '#FFF',
             }}>
-            <Icon size={14} name={'time'} color="#FFF" />
-            <SizedBox width={6} />
             {commitment}
-          </Text>
-        </View>
-        <View
-          style={{
-            borderRadius: 12,
-            paddingVertical: 8,
-            paddingHorizontal: 18,
-            backgroundColor: 'rgba(0, 123,255, .06)',
-          }}>
-          <Text
-            style={{
-              fontFamily: POPPINS.light,
-              fontSize: 14,
-              color: colors.primaryColor,
-            }}>
-            <Icon size={14} name={'location'} color={colors.primaryColor} />
-            <SizedBox width={6} />
-            {location ?? 'Remote'}
           </Text>
         </View>
       </View>

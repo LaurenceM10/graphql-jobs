@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   Text,
   View,
   StyleSheet,
   SafeAreaView,
+  LayoutAnimation,
   KeyboardAvoidingView,
 } from 'react-native';
 
@@ -29,12 +30,18 @@ function SearchScreen() {
     setSearchTerm(value);
   }, 500);
 
-  const SearchContent = () => {
+  useEffect(() => {
     if (loading) {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
+    }
+  }, [loading]);
+
+  const SearchContent = () => {
+    if (loading && !jobs.length) {
       return <JobListLoading />;
     }
 
-    if (jobs.length) {
+    if (jobs) {
       return <JobList jobs={jobs} />;
     }
 

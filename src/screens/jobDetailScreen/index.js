@@ -17,7 +17,7 @@ import { useJobDetail } from 'repositories/jobs';
 
 function JobDetailScreen({ route }) {
   const { job } = route.params;
-  const { title, slug, company, commitment, locationNames } = job;
+  const { id, title, slug, company, commitment, locationNames } = job;
   const {
     state: { detail },
   } = useJobDetail({
@@ -38,13 +38,14 @@ function JobDetailScreen({ route }) {
       <KeyboardAvoidingView style={styles.container} behavior="height">
         <ScrollView showsVerticalScrollIndicator={false}>
           <Header
+            id={id}
             title={title}
-            commitment={commitment.title}
             location={locationNames}
             logoUrl={company.logoUrl}
+            commitment={commitment.title}
           />
           <View style={styles.content}>
-            <Padding paddingVertical={12} paddingHorizontal={22}>
+            <Padding paddingVertical={18} paddingHorizontal={32}>
               {renderContent()}
             </Padding>
           </View>
@@ -60,9 +61,9 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#f4f4f8' },
   content: {
     flex: 0,
-    borderTopEndRadius: 35,
     backgroundColor: '#fff',
-    borderTopStartRadius: 35,
+    borderTopEndRadius: 45,
+    borderTopStartRadius: 45,
   },
 });
 

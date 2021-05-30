@@ -8,6 +8,13 @@ import JobDetailScreen from 'screens/jobDetailScreen';
 
 const Stack = createSharedElementStackNavigator();
 
+const transitionOptions = {
+  transitionSpec: {
+    open: { animation: 'timing', config: { duration: 500 } },
+    close: { animation: 'timing', config: { duration: 400 } },
+  },
+};
+
 export default function Navigation() {
   return (
     <NavigationContainer>
@@ -24,6 +31,14 @@ export default function Navigation() {
           component={JobDetailScreen}
           options={{
             headerShown: false,
+            ...transitionOptions,
+          }}
+          sharedElementsConfig={route => {
+            const {
+              job: { id, logoUrl },
+            } = route.params;
+
+            return [{ id, animation: 'fade' }];
           }}
         />
         <Stack.Screen
@@ -31,10 +46,7 @@ export default function Navigation() {
           component={SearchScreen}
           options={{
             headerShown: false,
-            transitionSpec: {
-              open: { animation: 'timing', config: { duration: 500 } },
-              close: { animation: 'timing', config: { duration: 400 } },
-            },
+            ...transitionOptions,
           }}
           sharedElementsConfig={(_, otherRoute) => {
             if (otherRoute.name === 'Home') {

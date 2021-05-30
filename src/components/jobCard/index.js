@@ -7,6 +7,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { SharedElement } from 'react-navigation-shared-element';
 
 // Styles
 import { colors } from 'core/presentation/styles/theme';
@@ -48,17 +49,19 @@ function JobLoadingCard() {
 }
 
 function JobCard({ job, onPress }) {
-  const { title, company, commitment, locationNames } = job;
+  const { id, title, company, commitment, locationNames } = job;
 
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <View style={styles.logoContainer}>
-          <Image
-            style={styles.logo}
-            source={{ uri: company?.logoUrl ?? defaultCompanyLogo }}
-          />
-        </View>
+        <SharedElement id={id}>
+          <View style={styles.logoContainer}>
+            <Image
+              style={styles.logo}
+              source={{ uri: company?.logoUrl ?? defaultCompanyLogo }}
+            />
+          </View>
+        </SharedElement>
         <View style={styles.content}>
           <View>
             <Text style={styles.title}>{title}</Text>

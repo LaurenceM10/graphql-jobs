@@ -7,18 +7,21 @@ import TextGradient from 'components/shared/textGradient';
 
 import { colors } from 'core/presentation/styles/theme';
 import { POPPINS } from 'core/presentation/styles/fonts';
+import { SharedElement } from 'react-navigation-shared-element';
 
 function Header(props) {
-  const { logoUrl, title, location, commitment } = props;
+  const { id, logoUrl, title, location, commitment } = props;
 
   return (
     <View style={styles.header}>
-      <Image
-        style={styles.logo}
-        source={{
-          uri: logoUrl,
-        }}
-      />
+      <SharedElement id={id}>
+        <Image
+          style={styles.logo}
+          source={{
+            uri: logoUrl,
+          }}
+        />
+      </SharedElement>
       <SizedBox height={18} />
       <TextGradient
         style={styles.jobTitle}

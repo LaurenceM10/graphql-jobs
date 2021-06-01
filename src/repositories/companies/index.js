@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useQuery } from '@apollo/client';
 import { COMPANY_LIST_QUERY } from './gql';
 
@@ -8,7 +9,12 @@ export function usePopularCompanies() {
   const { data, loading, error } = useQuery(COMPANY_LIST_QUERY, {
     fetchPolicy: 'no-cache',
   });
-  const companies = data?.companies?.slice(0, 7) ?? [];
+
+  const companies = useMemo(() => {
+    if (data) {
+      return data?.companies?.slice(0, 7) ?? [];
+    }
+  }, [data]);
 
   return { companies, loading, error };
 }

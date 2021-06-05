@@ -1,12 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import { JOB_DESCRIPTION_QUERY, JOBS_QUERY, SEARCH_JOB } from './gql';
 
 // LATEST JOBS should be the firsts seven jobs with company logo url
 export function useLatestJobs() {
   const { data, loading, error } = useQuery(JOBS_QUERY);
-  const jobs =
-    data?.jobs?.filter(job => !!job?.company?.logoUrl).slice(0, 7) ?? [];
+
+  const jobs = useMemo(() => {
+    if (data) {
+      return (
+        data?.jobs?.filter(job => !!job?.company?.logoUrl).slice(0, 7) ?? []
+      );
+    }
+  }, [data]);
 
   return { jobs, loading, error };
 }

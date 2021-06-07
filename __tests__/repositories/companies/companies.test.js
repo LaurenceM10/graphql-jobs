@@ -2,25 +2,10 @@ import React from 'react';
 import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
 import { usePopularCompanies } from '../../../src/repositories/companies';
-import { COMPANY_LIST_QUERY } from '../../../src/repositories/companies/gql';
-import { CompanyQueryResult } from '../data/responses';
+import { companiesQueryErrorMock, companiesQueryMock } from './mocks';
 
 describe('companies', () => {
   describe('usePopularCompanies custom hook', () => {
-    const companiesQueryMock = {
-      request: {
-        query: COMPANY_LIST_QUERY,
-      },
-      result: CompanyQueryResult,
-    };
-
-    const companiesQueryErrorMock = {
-      request: {
-        query: COMPANY_LIST_QUERY,
-      },
-      error: new Error('There was an error'),
-    };
-
     function getHookWrapper(mocks = []) {
       const wrapper = ({ children }) => (
         <MockedProvider mocks={mocks} addTypename={false}>

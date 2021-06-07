@@ -43,7 +43,7 @@ export default function Navigation() {
             } = route.params;
 
             return [
-              { id: `${id}${logoUrl}`, animation: 'fade' },
+              { id: `${id}${logoUrl}`, animation: 'move' },
               { id: `${id}${title}`, animation: 'fade' },
             ];
           }}

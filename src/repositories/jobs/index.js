@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import { JOB_DESCRIPTION_QUERY, JOBS_QUERY, SEARCH_JOB } from './gql';
 
@@ -23,7 +23,7 @@ export function useJobsSearch() {
   const [searchTerm, setSearchTerm] = useState('');
   const [fetchJobs, { data, loading, error }] = useLazyQuery(SEARCH_JOB);
 
-  const search = () => {
+  const search = useCallback(() => {
     setSearching(true);
 
     fetchJobs({
@@ -38,7 +38,7 @@ export function useJobsSearch() {
       },
       fetchPolicy: 'no-cache',
     });
-  };
+  }, [fetchJobs, searchTerm]);
 
   useEffect(() => {
     if (!searchTerm) {
@@ -47,7 +47,7 @@ export function useJobsSearch() {
     }
 
     search();
-  }, [searchTerm]);
+  }, [search, searchTerm]);
 
   useEffect(() => {
     const fullTimeJobs = data?.commitments[0]?.jobs ?? [];
@@ -55,7 +55,7 @@ export function useJobsSearch() {
     const jobList = [...fullTimeJobs, ...partTimeJobs];
 
     if (jobList) {
-      setJobs(prevJobs => jobList);
+      setJobs(jobList);
     }
 
     setSearching(false);

@@ -2,42 +2,27 @@ import React from 'react';
 import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
 import { useLatestJobs } from '../../../src/repositories/jobs';
-import { JOBS_QUERY } from '../../../src/repositories/jobs/gql';
-import { JobsQueryResult } from '../data/responses';
+import { jobsQueryErrorMock, jobsQueryMock } from './mocks';
 
 describe('jobs', () => {
-  describe('usePopularCompanies custom hook', () => {
-    const jobsQueryMock = {
-      request: {
-        query: JOBS_QUERY,
-      },
-      result: JobsQueryResult,
-    };
+  function getHookWrapper(mocks = []) {
+    const wrapper = ({ children }) => (
+      <MockedProvider mocks={mocks} addTypename={false}>
+        {children}
+      </MockedProvider>
+    );
 
-    const jobsQueryErrorMock = {
-      request: {
-        query: JOBS_QUERY,
-      },
-      error: new Error('There was an error'),
-    };
+    const { result, waitForNextUpdate } = renderHook(() => useLatestJobs(), {
+      wrapper,
+    });
 
-    function getHookWrapper(mocks = []) {
-      const wrapper = ({ children }) => (
-        <MockedProvider mocks={mocks} addTypename={false}>
-          {children}
-        </MockedProvider>
-      );
+    expect(result.current.loading).toBeTruthy();
+    expect(result.current.error).toBeUndefined();
+    expect(result.current.jobs).toBeUndefined();
+    return { result, waitForNextUpdate };
+  }
 
-      const { result, waitForNextUpdate } = renderHook(() => useLatestJobs(), {
-        wrapper,
-      });
-
-      expect(result.current.loading).toBeTruthy();
-      expect(result.current.error).toBeUndefined();
-      expect(result.current.jobs).toBeUndefined();
-      return { result, waitForNextUpdate };
-    }
-
+  describe('useLatestJobs custom hook', () => {
     test('should return a list of jobs when query response is successful', async () => {
       const { result, waitForNextUpdate } = getHookWrapper([jobsQueryMock]);
 
@@ -60,4 +45,6 @@ describe('jobs', () => {
       expect(result.current.jobs).toBeUndefined();
     });
   });
+
+  describe('useLatestJobs custom hook', () => {})
 });

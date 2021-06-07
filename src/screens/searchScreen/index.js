@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import {
-  Text,
   View,
   StyleSheet,
   SafeAreaView,
@@ -10,20 +9,18 @@ import {
 
 import Padding from 'components/shared/padding';
 import SizedBox from 'components/shared/sizedBox';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import InputSearch from 'components/shared/inputSearch';
+import SearchView from 'screens/searchScreen/searchView';
 import JobList, { JobListLoading } from 'components/jobList';
 import { SharedElement } from 'react-navigation-shared-element';
 
 import { useJobsSearch } from 'repositories/jobs';
 import { useDebouncedCallback } from 'use-debounce';
-import { colors } from '../../core/presentation/styles/theme';
-import { POPPINS } from '../../core/presentation/styles/fonts';
 
 function SearchScreen() {
   const {
     operations: { setSearchTerm },
-    state: { jobs, loading, error },
+    state: { jobs, loading },
   } = useJobsSearch();
 
   const onChangeSearch = useDebouncedCallback(value => {
@@ -31,10 +28,8 @@ function SearchScreen() {
   }, 500);
 
   useEffect(() => {
-    if (loading) {
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
-    }
-  }, [loading]);
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
+  }, [loading, jobs]);
 
   const SearchContent = () => {
     if (loading && !jobs.length) {
@@ -45,25 +40,7 @@ function SearchScreen() {
       return <JobList jobs={jobs} />;
     }
 
-    return (
-      <View
-        style={{
-          height: 300,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Icon size={56} name="search" />
-        <SizedBox height={24} />
-        <Text
-          style={{
-            fontSize: 16,
-            fontFamily: POPPINS.light,
-            color: colors.primaryText,
-          }}>
-          Search for your new job
-        </Text>
-      </View>
-    );
+    return <SearchView />;
   };
 
   return (

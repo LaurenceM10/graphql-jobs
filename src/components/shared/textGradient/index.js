@@ -1,14 +1,12 @@
 import React from 'react';
 import { Text } from 'react-native';
+import PropTypes from 'prop-types';
 import { LinearTextGradient } from 'react-native-text-gradient';
+
+// Styles
 import { colors } from 'core/presentation/styles/theme';
 
-function TextGradient({
-  children,
-  gradientColors = [colors.primaryColor, colors.secondaryColor],
-  style = {},
-  containerStyles = {},
-}) {
+function TextGradient({ children, style, gradientColors, containerStyles }) {
   return (
     <LinearTextGradient
       style={containerStyles}
@@ -20,5 +18,18 @@ function TextGradient({
     </LinearTextGradient>
   );
 }
+
+TextGradient.propTypes = {
+  style: PropTypes.object,
+  containerStyles: PropTypes.object,
+  children: PropTypes.node.isRequired,
+  gradientColors: PropTypes.arrayOf(PropTypes.string),
+};
+
+TextGradient.defaultProps = {
+  style: {},
+  containerStyles: {},
+  gradientColors: [colors.primaryColor, colors.secondaryColor],
+};
 
 export default TextGradient;

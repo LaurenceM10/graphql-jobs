@@ -3,6 +3,7 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import { POPPINS } from 'core/presentation/styles/fonts';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colors } from '../../../core/presentation/styles/theme';
+import PropTypes from 'prop-types';
 
 function InputSearch({ onChange, onFocus, autoFocus }) {
   return (
@@ -24,6 +25,17 @@ function InputSearch({ onChange, onFocus, autoFocus }) {
     </View>
   );
 }
+
+InputSearch.defaultProps = {
+  onFocus: PropTypes.func,
+  autoFocus: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+};
+
+InputSearch.defaultProps = {
+  onFocus: () => {},
+  autoFocus: false,
+};
 
 const styles = StyleSheet.create({
   container: {

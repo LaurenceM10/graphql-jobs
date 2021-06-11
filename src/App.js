@@ -5,6 +5,7 @@ import { ApolloProvider } from '@apollo/client';
 
 import Navigation from 'navigation';
 import client from 'core/apollo/client';
+import AuthProvider from './providers/authProvider/authProvider';
 
 if (Platform.OS === 'android') {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -15,7 +16,9 @@ if (Platform.OS === 'android') {
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Navigation />
+      <AuthProvider>
+        <Navigation />
+      </AuthProvider>
     </ApolloProvider>
   );
 };

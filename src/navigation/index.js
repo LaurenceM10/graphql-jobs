@@ -4,7 +4,11 @@ import { createSharedElementStackNavigator } from 'react-navigation-shared-eleme
 
 import HomeScreen from 'screens/homeScreen';
 import SearchScreen from 'screens/searchScreen';
+import SplashScreen from 'screens/splashScreen';
 import JobDetailScreen from 'screens/jobDetailScreen';
+
+// Hooks
+import { useAuth } from 'providers/authProvider/authProvider';
 
 const Stack = createSharedElementStackNavigator();
 
@@ -16,6 +20,12 @@ const transitionOptions = {
 };
 
 export default function Navigation() {
+  const { state } = useAuth();
+
+  if (state.isLoading) {
+    return <SplashScreen />;
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator>

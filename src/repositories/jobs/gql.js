@@ -46,6 +46,7 @@ export const JOB_DESCRIPTION_QUERY = gql`
     job(input: $input) {
       id
       description
+      applyUrl
     }
   }
 `;

@@ -11,7 +11,7 @@ import {
 import Markdown from 'components/markdown';
 import Padding from 'components/shared/padding';
 import Header from 'screens/jobDetailScreen/header';
-import Footer from 'screens/jobDetailScreen/footer';
+import JobActions from 'screens/jobDetailScreen/jobActions';
 
 import { useJobDetail } from 'repositories/jobs';
 
@@ -49,7 +49,7 @@ function JobDetailScreen({ route }) {
           </Padding>
         </View>
       </ScrollView>
-      <Footer />
+      <JobActions onApply={() => {}} onSave={() => {}} />
     </SafeAreaView>
   );
 }

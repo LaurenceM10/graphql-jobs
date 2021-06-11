@@ -4,20 +4,34 @@ import { Text, View, StyleSheet } from 'react-native';
 import SizedBox from 'components/shared/sizedBox';
 import Icon from 'react-native-vector-icons/Fontisto';
 import { POPPINS } from 'core/presentation/styles/fonts';
+import PropTypes from 'prop-types';
+import {
+  TouchableHighlight,
+  TouchableWithoutFeedback,
+} from 'react-native-gesture-handler';
 
-function Footer() {
+function JobActions({ onSave, onApply }) {
   return (
     <View style={styles.footer}>
-      <View style={styles.saveContainer}>
-        <Icon size={22} name="favorite" color="#999" />
-      </View>
+      <TouchableWithoutFeedback onPress={onSave}>
+        <View style={styles.saveContainer}>
+          <Icon size={22} name="favorite" color="#999" />
+        </View>
+      </TouchableWithoutFeedback>
       <SizedBox width={15} />
-      <View style={styles.applyContainer}>
-        <Text style={styles.applyText}>Apply Now</Text>
-      </View>
+      <TouchableWithoutFeedback onPress={onApply}>
+        <View style={styles.applyContainer}>
+          <Text style={styles.applyText}>Apply Now</Text>
+        </View>
+      </TouchableWithoutFeedback>
     </View>
   );
 }
+
+JobActions.propTypes = {
+  onSave: PropTypes.func.isRequired,
+  onApply: PropTypes.string.isRequired,
+};
 
 const styles = StyleSheet.create({
   footer: {
@@ -58,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Footer;
+export default JobActions;

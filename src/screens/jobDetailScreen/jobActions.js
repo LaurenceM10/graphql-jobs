@@ -1,36 +1,31 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 import SizedBox from 'components/shared/sizedBox';
+import Ripple from 'react-native-material-ripple';
 import Icon from 'react-native-vector-icons/Fontisto';
+
+// Styles
 import { POPPINS } from 'core/presentation/styles/fonts';
-import PropTypes from 'prop-types';
-import {
-  TouchableHighlight,
-  TouchableWithoutFeedback,
-} from 'react-native-gesture-handler';
 
 function JobActions({ onSave, onApply }) {
   return (
     <View style={styles.footer}>
-      <TouchableWithoutFeedback onPress={onSave}>
-        <View style={styles.saveContainer}>
-          <Icon size={22} name="favorite" color="#999" />
-        </View>
-      </TouchableWithoutFeedback>
+      <Ripple onPress={onSave} style={[styles.button, styles.saveContainer]}>
+        <Icon size={22} name="favorite" color="#999" />
+      </Ripple>
       <SizedBox width={15} />
-      <TouchableWithoutFeedback onPress={onApply}>
-        <View style={styles.applyContainer}>
-          <Text style={styles.applyText}>Apply Now</Text>
-        </View>
-      </TouchableWithoutFeedback>
+      <Ripple style={[styles.button, styles.applyContainer]} onPress={onApply}>
+        <Text style={styles.applyText}>Apply Now</Text>
+      </Ripple>
     </View>
   );
 }
 
 JobActions.propTypes = {
   onSave: PropTypes.func.isRequired,
-  onApply: PropTypes.string.isRequired,
+  onApply: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -45,24 +40,21 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
-  saveContainer: {
+  button: {
     height: 50,
-    minWidth: 55,
-    justifyContent: 'center',
-    alignItems: 'center',
+    borderRadius: 14,
+    overflow: 'hidden',
     paddingVertical: 8,
     paddingHorizontal: 18,
-    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  saveContainer: {
+    minWidth: 55,
     backgroundColor: '#f0f0f0',
   },
   applyContainer: {
-    height: 50,
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 18,
-    borderRadius: 14,
     backgroundColor: '#06a762',
   },
   applyText: {

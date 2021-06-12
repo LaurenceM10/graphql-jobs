@@ -1,7 +1,7 @@
 import React from 'react';
 import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
-import { usePopularCompanies } from '../../../src/repositories/companies';
+import { usePopularCompanies } from '../../../src/logic/companies';
 import { companiesQueryErrorMock, companiesQueryMock } from './mocks';
 
 describe('companies', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { usePopularCompanies } from 'repositories/companies';
+import { usePopularCompanies } from 'logic/companies';
 import {
   CompanyCard,
   CompaniesLoading,

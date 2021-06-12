@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import JobsCarousel from 'components/jobsCarousel';
 import { JobLoadingCard } from 'components/jobCard';
 
-import { useLatestJobs } from 'repositories/jobs';
+import { useLatestJobs } from 'logic/jobs';
 
 function LatestJobs() {
   const { jobs, loading } = useLatestJobs();

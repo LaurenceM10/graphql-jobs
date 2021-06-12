@@ -14,7 +14,7 @@ import SearchView from 'screens/searchScreen/searchView';
 import JobList, { JobListLoading } from 'components/jobList';
 import { SharedElement } from 'react-navigation-shared-element';
 
-import { useJobsSearch } from 'repositories/jobs';
+import { useJobsSearch } from 'logic/jobs';
 import { useDebouncedCallback } from 'use-debounce';
 
 function SearchScreen() {

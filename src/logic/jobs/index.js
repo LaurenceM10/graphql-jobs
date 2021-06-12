@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Linking } from 'react-native';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import { JOB_DESCRIPTION_QUERY, JOBS_QUERY, SEARCH_JOB } from './gql';
 
@@ -90,4 +91,22 @@ export function useJobDetail({ jobSlug, companySlug }) {
       error,
     },
   };
+}
+
+export function useApplyToJob(url) {
+  const [error, setError] = useState(null);
+
+  const apply = () => {
+    setError(null);
+
+    Linking.canOpenURL(url).then(supported => {
+      if (supported) {
+        Linking.openURL(url);
+      } else {
+        setError(`Don't know how to open ${url}`);
+      }
+    });
+  };
+
+  return [apply, { error }];
 }

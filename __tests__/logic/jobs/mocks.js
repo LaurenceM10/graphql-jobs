@@ -1,4 +1,4 @@
-import { JOBS_QUERY } from '../../../src/repositories/jobs/gql';
+import { JOBS_QUERY } from '../../../src/logic/jobs/gql';
 import { JobsQueryResult } from '../data/responses';
 
 export const jobsQueryMock = {

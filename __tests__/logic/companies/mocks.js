@@ -1,4 +1,4 @@
-import { COMPANY_LIST_QUERY } from '../../../src/repositories/companies/gql';
+import { COMPANY_LIST_QUERY } from '../../../src/logic/companies/gql';
 import { CompanyQueryResult } from '../data/responses';
 
 export const companiesQueryMock = {

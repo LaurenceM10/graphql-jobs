@@ -13,7 +13,7 @@ import Padding from 'components/shared/padding';
 import Header from 'screens/jobDetailScreen/header';
 import JobActions from 'screens/jobDetailScreen/jobActions';
 
-import { useJobDetail } from 'repositories/jobs';
+import { useApplyToJob, useJobDetail } from 'logic/jobs';
 
 function JobDetailScreen({ route }) {
   const { job } = route.params;
@@ -24,6 +24,7 @@ function JobDetailScreen({ route }) {
     jobSlug: slug,
     companySlug: company.slug,
   });
+  const [apply] = useApplyToJob(detail?.applyUrl);
 
   const renderContent = () => {
     if (detail) {
@@ -49,7 +50,7 @@ function JobDetailScreen({ route }) {
           </Padding>
         </View>
       </ScrollView>
-      <JobActions onApply={() => {}} onSave={() => {}} />
+      <JobActions onApply={apply} onSave={() => {}} />
     </SafeAreaView>
   );
 }

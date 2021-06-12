@@ -5,6 +5,8 @@ import Padding from 'components/shared/padding';
 import JobCard, { JobLoadingCard } from 'components/jobCard';
 import SizedBox from '../shared/sizedBox';
 
+import { useNavigation } from '@react-navigation/native';
+
 function JobListLoading({ length = 7 }) {
   return Array.from({ length }, (_, i) => {
     return (
@@ -16,12 +18,18 @@ function JobListLoading({ length = 7 }) {
 }
 
 function JobList({ jobs }) {
-  const renderItem = ({ item }) => (
-    <>
-      <JobCard job={item} />
-      <SizedBox height={6} />
-    </>
-  );
+  const navigation = useNavigation();
+
+  const renderItem = ({ item }) => {
+    const goToDetail = () => navigation.navigate('JobDetail', { job: item });
+
+    return (
+      <>
+        <JobCard job={item} onPress={goToDetail} />
+        <SizedBox height={6} />
+      </>
+    );
+  };
 
   return (
     <FlatList

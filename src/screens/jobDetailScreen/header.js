@@ -9,6 +9,9 @@ import { colors } from 'core/presentation/styles/theme';
 import { POPPINS } from 'core/presentation/styles/fonts';
 import { SharedElement } from 'react-navigation-shared-element';
 
+const defaultCompanyLogo =
+  'https://pics.freeicons.io/uploads/icons/png/2799012341582884271-512.png';
+
 function Feature(props: { location: any }) {
   return (
     <View
@@ -42,7 +45,7 @@ function Header(props) {
         <Image
           style={styles.logo}
           source={{
-            uri: logoUrl,
+            uri: logoUrl ?? defaultCompanyLogo,
           }}
         />
       </SharedElement>

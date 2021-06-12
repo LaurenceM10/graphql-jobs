@@ -45,15 +45,11 @@ export default function Navigation() {
           }}
           sharedElementsConfig={route => {
             const {
-              job: {
-                id,
-                company: { logoUrl },
-                title,
-              },
+              job: { id, company, title },
             } = route.params;
 
             return [
-              { id: `${id}${logoUrl}`, animation: 'move' },
+              { id: `${id}${company?.logoUrl}`, animation: 'move' },
               { id: `${id}${title}`, animation: 'fade' },
             ];
           }}

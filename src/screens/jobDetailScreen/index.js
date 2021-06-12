@@ -22,7 +22,7 @@ function JobDetailScreen({ route }) {
     state: { detail },
   } = useJobDetail({
     jobSlug: slug,
-    companySlug: company.slug,
+    companySlug: company?.slug,
   });
   const [apply] = useApplyToJob(detail?.applyUrl);
 
@@ -41,7 +41,7 @@ function JobDetailScreen({ route }) {
           id={id}
           title={title}
           location={locationNames}
-          logoUrl={company.logoUrl}
+          logoUrl={company?.logoUrl}
           commitment={commitment.title}
         />
         <View style={styles.content}>

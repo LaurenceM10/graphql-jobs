@@ -3,7 +3,7 @@ import { Linking } from 'react-native';
 import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
 import { useApplyToJob, useLatestJobs } from '../../../src/logic/jobs';
-import { jobsQueryErrorMock, jobsQueryMock } from './mocks';
+import { jobsQueryErrorMock, jobsQueryMock } from '../../../fixtures/logic/jobs/mocks';
 
 describe('jobs', () => {
   function getHookWrapper(mocks = []) {

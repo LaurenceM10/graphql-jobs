@@ -2,7 +2,7 @@ import React from 'react';
 import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
 import { usePopularCompanies } from '../../../src/logic/companies';
-import { companiesQueryErrorMock, companiesQueryMock } from './mocks';
+import { companiesQueryErrorMock, companiesQueryMock } from '../../../fixtures/logic/companies/mocks';
 
 describe('companies', () => {
   describe('usePopularCompanies custom hook', () => {

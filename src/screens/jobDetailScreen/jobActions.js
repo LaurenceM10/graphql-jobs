@@ -2,20 +2,14 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import SizedBox from 'components/shared/sizedBox';
 import Ripple from 'react-native-material-ripple';
-import Icon from 'react-native-vector-icons/Fontisto';
 
 // Styles
 import { POPPINS } from 'core/presentation/styles/fonts';
 
-function JobActions({ onSave, onApply }) {
+function JobActions({ onApply }) {
   return (
     <View style={styles.footer}>
-      <Ripple onPress={onSave} style={[styles.button, styles.saveContainer]}>
-        <Icon size={22} name="favorite" color="#999" />
-      </Ripple>
-      <SizedBox width={15} />
       <Ripple style={[styles.button, styles.applyContainer]} onPress={onApply}>
         <Text style={styles.applyText}>Apply Now</Text>
       </Ripple>
@@ -24,7 +18,6 @@ function JobActions({ onSave, onApply }) {
 }
 
 JobActions.propTypes = {
-  onSave: PropTypes.func.isRequired,
   onApply: PropTypes.func.isRequired,
 };
 
@@ -48,10 +41,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  saveContainer: {
-    minWidth: 55,
-    backgroundColor: '#f0f0f0',
   },
   applyContainer: {
     flex: 1,

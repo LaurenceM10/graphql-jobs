@@ -36,7 +36,7 @@ function Feature(props: { location: any }) {
   );
 }
 
-function Header(props) {
+function JobHeader(props) {
   const { id, logoUrl, title, location, commitment } = props;
 
   return (
@@ -86,7 +86,7 @@ function Header(props) {
 
 const styles = StyleSheet.create({
   header: {
-    height: 250,
+    paddingBottom: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -109,4 +109,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Header;
+export default JobHeader;

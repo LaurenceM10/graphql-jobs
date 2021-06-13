@@ -10,10 +10,11 @@ import {
 
 import Markdown from 'components/markdown';
 import Padding from 'components/shared/padding';
-import Header from 'screens/jobDetailScreen/header';
+import TopBar from 'screens/jobDetailScreen/topBar';
+import JobHeader from 'screens/jobDetailScreen/jobHeader';
 import JobActions from 'screens/jobDetailScreen/jobActions';
 
-import { useApplyToJob, useJobDetail } from 'logic/jobs';
+import { useApplyToJob, useJobDetail, useSaveJob } from 'logic/jobs';
 
 function JobDetailScreen({ route }) {
   const { job } = route.params;
@@ -25,6 +26,7 @@ function JobDetailScreen({ route }) {
     companySlug: company?.slug,
   });
   const [apply] = useApplyToJob(detail?.applyUrl);
+  const [save] = useSaveJob(job);
 
   const renderContent = () => {
     if (detail) {
@@ -37,7 +39,8 @@ function JobDetailScreen({ route }) {
   return (
     <SafeAreaView style={styles.screen}>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <Header
+        <TopBar onSave={save} />
+        <JobHeader
           id={id}
           title={title}
           location={locationNames}
@@ -50,7 +53,7 @@ function JobDetailScreen({ route }) {
           </Padding>
         </View>
       </ScrollView>
-      <JobActions onApply={apply} onSave={() => {}} />
+      <JobActions onApply={apply} />
     </SafeAreaView>
   );
 }

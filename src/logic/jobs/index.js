@@ -110,3 +110,18 @@ export function useApplyToJob(url) {
 
   return [apply, { error }];
 }
+
+export function useSaveJob(job) {
+  const [error, setError] = useState(null);
+
+  const save = () => {
+    setError(null);
+
+    try {
+    } catch (e) {
+      setError('There was an error trying to save the job');
+    }
+  };
+
+  return [save, { error }];
+}

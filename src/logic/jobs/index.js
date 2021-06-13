@@ -97,8 +97,6 @@ export function useApplyToJob(url) {
   const [error, setError] = useState(null);
 
   const apply = () => {
-    setError(null);
-
     Linking.canOpenURL(url).then(supported => {
       if (supported) {
         Linking.openURL(url);

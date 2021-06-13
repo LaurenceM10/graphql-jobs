@@ -1,7 +1,8 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
-import { useLatestJobs } from '../../../src/logic/jobs';
+import { useApplyToJob, useLatestJobs } from '../../../src/logic/jobs';
 import { jobsQueryErrorMock, jobsQueryMock } from './mocks';
 
 describe('jobs', () => {
@@ -46,5 +47,72 @@ describe('jobs', () => {
     });
   });
 
-  describe('useLatestJobs custom hook', () => {})
+  describe('useApplyToJob custom hook', () => {
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    test('should return initial state', async () => {
+      const { result } = renderHook(() => useApplyToJob(''));
+      const [apply, { error }] = result.current;
+
+      expect(apply).toBeTruthy();
+      expect(error).toBeNull();
+    });
+
+    test('should verify if there is a proper app to open url', async () => {
+      const canOpenURL = jest
+        .spyOn(Linking, 'canOpenURL')
+        .mockImplementation(() => Promise.resolve(true));
+
+      const { result } = renderHook(() => useApplyToJob(''));
+      const [apply] = result.current;
+
+      // Act
+      apply();
+
+      // Assert
+      expect(canOpenURL).toHaveBeenCalled();
+    });
+
+    test('should open url when there is a proper app the open it', async () => {
+      jest
+        .spyOn(Linking, 'canOpenURL')
+        .mockImplementation(() => Promise.resolve(true));
+
+      const openURL = jest
+        .spyOn(Linking, 'openURL')
+        .mockImplementation(() => Promise.resolve());
+
+      const { result } = renderHook(() => useApplyToJob(''));
+      const [apply] = result.current;
+
+      // Act
+      apply();
+
+      // Assert
+      expect(result.current[1].error).toBeNull();
+      expect(openURL).toHaveBeenCalled();
+    });
+
+    test('should return error when there is not app the open url', async () => {
+      jest
+        .spyOn(Linking, 'canOpenURL')
+        .mockImplementation(() => Promise.resolve(false));
+      const openURL = jest
+        .spyOn(Linking, 'openURL')
+        .mockImplementation(() => Promise.resolve());
+
+      const { result, waitForNextUpdate } = renderHook(() => useApplyToJob(''));
+      const [apply] = result.current;
+
+      // Act
+      apply();
+      await waitForNextUpdate();
+
+      // Assert
+      expect(result.current[1].error).toBeTruthy();
+      expect(openURL).not.toHaveBeenCalled();
+    });
+  });
 });

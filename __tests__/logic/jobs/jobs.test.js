@@ -3,7 +3,15 @@ import { Linking } from 'react-native';
 import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
 import { useApplyToJob, useLatestJobs } from '../../../src/logic/jobs';
-import { jobsQueryErrorMock, jobsQueryMock } from '../../../fixtures/logic/jobs/mocks';
+import {
+  jobsQueryMock,
+  jobsQueryErrorMock,
+} from '../../../fixtures/logic/jobs/mocks';
+
+afterEach(() => {
+  jest.clearAllMocks();
+  jest.resetModules();
+});
 
 describe('jobs', () => {
   function getHookWrapper(mocks = []) {
@@ -21,6 +29,26 @@ describe('jobs', () => {
     expect(result.current.error).toBeUndefined();
     expect(result.current.jobs).toBeUndefined();
     return { result, waitForNextUpdate };
+  }
+
+  function mockSuccessLinking() {
+    const canOpenURL = jest
+      .spyOn(Linking, 'canOpenURL')
+      .mockImplementation(() => Promise.resolve(true));
+    const openURL = jest
+      .spyOn(Linking, 'openURL')
+      .mockImplementation(() => Promise.resolve(true));
+
+    return { canOpenURL, openURL };
+  }
+
+  function mockFailureLinking() {
+    const canOpenURL = jest
+      .spyOn(Linking, 'canOpenURL')
+      .mockImplementation(() => Promise.resolve(false));
+    const openURL = jest.spyOn(Linking, 'openURL');
+
+    return { canOpenURL, openURL };
   }
 
   describe('useLatestJobs custom hook', () => {
@@ -48,11 +76,7 @@ describe('jobs', () => {
   });
 
   describe('useApplyToJob custom hook', () => {
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
-
-    test('should return initial state', async () => {
+    test('should return initial state', () => {
       const { result } = renderHook(() => useApplyToJob(''));
       const [apply, { error }] = result.current;
 
@@ -60,10 +84,8 @@ describe('jobs', () => {
       expect(error).toBeNull();
     });
 
-    test('should verify if there is a proper app to open url', async () => {
-      const canOpenURL = jest
-        .spyOn(Linking, 'canOpenURL')
-        .mockImplementation(() => Promise.resolve(true));
+    test('should verify if there is a proper app to open url', () => {
+      const { canOpenURL } = mockSuccessLinking();
 
       const { result } = renderHook(() => useApplyToJob(''));
       const [apply] = result.current;
@@ -76,15 +98,10 @@ describe('jobs', () => {
     });
 
     test('should open url when there is a proper app the open it', async () => {
-      jest
-        .spyOn(Linking, 'canOpenURL')
-        .mockImplementation(() => Promise.resolve(true));
-
-      const openURL = jest
-        .spyOn(Linking, 'openURL')
-        .mockImplementation(() => Promise.resolve());
-
-      const { result } = renderHook(() => useApplyToJob(''));
+      const { canOpenURL } = mockSuccessLinking();
+      const { result } = renderHook(() =>
+        useApplyToJob('https://www.google.com/'),
+      );
       const [apply] = result.current;
 
       // Act
@@ -92,16 +109,11 @@ describe('jobs', () => {
 
       // Assert
       expect(result.current[1].error).toBeNull();
-      expect(openURL).toHaveBeenCalled();
+      expect(canOpenURL).toHaveBeenCalled();
     });
 
     test('should return error when there is not app the open url', async () => {
-      jest
-        .spyOn(Linking, 'canOpenURL')
-        .mockImplementation(() => Promise.resolve(false));
-      const openURL = jest
-        .spyOn(Linking, 'openURL')
-        .mockImplementation(() => Promise.resolve());
+      const { canOpenURL, openURL } = mockFailureLinking();
 
       const { result, waitForNextUpdate } = renderHook(() => useApplyToJob(''));
       const [apply] = result.current;
@@ -112,6 +124,7 @@ describe('jobs', () => {
 
       // Assert
       expect(result.current[1].error).toBeTruthy();
+      expect(canOpenURL).toHaveBeenCalled();
       expect(openURL).not.toHaveBeenCalled();
     });
   });

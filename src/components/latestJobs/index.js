@@ -12,12 +12,13 @@ function LatestJobs() {
 
   if (loading) {
     return (
-      <View style={{ marginBottom: 32 }}>
+      <View testID="JobLoadingCard" style={{ marginBottom: 32 }}>
         <JobLoadingCard />
       </View>
     );
   }
 
+  // return <View testID="JobsCarousel" style={{ marginBottom: 32 }} />;
   return <JobsCarousel jobs={jobs} />;
 }
 

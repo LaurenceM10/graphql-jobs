@@ -37,7 +37,7 @@ function JobsCarousel({ jobs }) {
 
   const { width } = useWindowDimensions();
   return (
-    <View>
+    <View testID="JobsCarousel">
       <Carousel
         data={jobs}
         layout="default"

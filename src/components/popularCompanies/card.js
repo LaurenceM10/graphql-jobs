@@ -1,7 +1,9 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { POPPINS } from '../../core/presentation/styles/fonts';
-import { colors } from '../../core/presentation/styles/theme';
+import PropTypes from 'prop-types';
+
+import { colors } from 'core/presentation/styles/theme';
+import { POPPINS } from 'core/presentation/styles/fonts';
 
 function CompaniesLoading() {
   return (
@@ -32,6 +34,13 @@ function CompanyCard({ company }) {
     </View>
   );
 }
+
+CompanyCard.propTypes = {
+  company: PropTypes.shape({
+    name: PropTypes.string,
+    logoUrl: PropTypes.string,
+  }).isRequired,
+};
 
 const styles = StyleSheet.create({
   card: {

@@ -18,7 +18,6 @@ function LatestJobs() {
     );
   }
 
-  // return <View testID="JobsCarousel" style={{ marginBottom: 32 }} />;
   return <JobsCarousel jobs={jobs} />;
 }
 

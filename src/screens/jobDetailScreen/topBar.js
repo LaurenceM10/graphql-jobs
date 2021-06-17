@@ -7,10 +7,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
-function TopBar({ onSave }) {
-  const navigation = useNavigation();
-  const goBack = () => navigation.goBack();
-
+function TopBar({ onSave, goBack }) {
   return (
     <View style={styles.header}>
       <Ripple style={styles.icon} onPress={goBack}>
@@ -25,6 +22,7 @@ function TopBar({ onSave }) {
 
 TopBar.propTypes = {
   onSave: PropTypes.func.isRequired,
+  goBack: PropTypes.func.isRequired,
 };
 
 const styles = StyleSheet.create({

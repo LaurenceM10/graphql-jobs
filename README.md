@@ -1,7 +1,24 @@
 # GraphQL Jobs - Mobile App built with React Native
 
-This application focuses on offering job offers related to development with GraphQL. The GraphQL API used is x, which is a public API.
-I'm using apollo-client as a GraphQL client to facilitate data consumption apart from the advantages that apollo hooks provide.
+This application focuses on offering job offers related to development with GraphQL. The GraphQL API used is [GraphQL Jobs](https://api.graphql.jobs/), which is a public API.
+I'm using [Apollo Client](https://www.npmjs.com/package/@apollo/client) as a GraphQL client to facilitate data fetching apart from the advantages that apollo hooks provide.
+
+## Installation
+
+* Clone the repo:
+  `git clone https://github.com/LaurenceM10/graphql-jobs.git`
+
+* Access the directory:
+  `cd graphql-jobs`
+
+* Install the dependencies:
+  `yarn` or `npm install`
+
+* Create a `.env` file in the root of the project with the following variable: `API_URL='https://api.graphql.jobs/'`
+
+## Run
+
+* `yarn run android`
 
 Here are some screens of what the app looks like:
 

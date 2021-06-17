@@ -16,7 +16,7 @@ import JobActions from 'screens/jobDetailScreen/jobActions';
 
 import { useApplyToJob, useJobDetail, useSaveJob } from 'logic/jobs';
 
-function JobDetailScreen({ route }) {
+function JobDetailScreen({ route, navigation }) {
   const { job } = route.params;
   const { id, title, slug, company, commitment, locationNames } = job;
   const {
@@ -27,6 +27,8 @@ function JobDetailScreen({ route }) {
   });
   const [apply] = useApplyToJob(detail?.applyUrl);
   const [save] = useSaveJob(job);
+
+  const goBack = () => navigation.goBack();
 
   const renderContent = () => {
     if (detail) {
@@ -39,7 +41,7 @@ function JobDetailScreen({ route }) {
   return (
     <SafeAreaView style={styles.screen}>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <TopBar onSave={save} />
+        <TopBar onSave={save} goBack={goBack} />
         <JobHeader
           id={id}
           title={title}

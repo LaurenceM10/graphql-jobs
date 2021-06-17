@@ -6,6 +6,7 @@ import {
   Image,
   TouchableWithoutFeedback,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 import ShimmerText from 'components/shared/shimmerText';
 
@@ -77,6 +78,17 @@ function JobCard({ job, onPress }) {
     </TouchableWithoutFeedback>
   );
 }
+
+JobCard.propTypes = {
+  onPress: PropTypes.func.isRequired,
+  job: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    company: PropTypes.object,
+    commitment: PropTypes.object,
+    locationNames: PropTypes.string,
+  }).isRequired,
+};
 
 const styles = StyleSheet.create({
   card: {

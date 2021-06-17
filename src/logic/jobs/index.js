@@ -116,6 +116,7 @@ export function useSaveJob(job) {
     setError(null);
 
     try {
+      // TODO: Save job locally using SQL Lite or Realm
     } catch (e) {
       setError('There was an error trying to save the job');
     }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, useWindowDimensions } from 'react-native';
+import PropTypes from 'prop-types';
 
 // Components
 import JobCard from 'components/jobCard';
@@ -50,6 +51,18 @@ function JobsCarousel({ jobs }) {
     </View>
   );
 }
+
+JobsCarousel.propTypes = {
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      company: PropTypes.object,
+      commitment: PropTypes.object,
+      locationNames: PropTypes.string,
+    }),
+  ).isRequired,
+};
 
 const styles = StyleSheet.create({
   paginationContainer: {

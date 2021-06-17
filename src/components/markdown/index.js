@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { POPPINS } from 'core/presentation/styles/fonts';
 import MarkdownDisplay from 'react-native-markdown-display';
@@ -13,6 +14,10 @@ import MarkdownDisplay from 'react-native-markdown-display';
 function Markdown({ children }) {
   return <MarkdownDisplay style={styles}>{children}</MarkdownDisplay>;
 }
+
+Markdown.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 const styles = StyleSheet.create({
   // Headings

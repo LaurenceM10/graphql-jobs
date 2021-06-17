@@ -1,9 +1,10 @@
 import React from 'react';
 import { FlatList } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Padding from 'components/shared/padding';
+import SizedBox from 'components/shared/sizedBox';
 import JobCard, { JobLoadingCard } from 'components/jobCard';
-import SizedBox from '../shared/sizedBox';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -36,10 +37,23 @@ function JobList({ jobs }) {
       data={jobs}
       renderItem={renderItem}
       keyExtractor={item => item.id}
+      keyboardShouldPersistTaps="always"
       showsVerticalScrollIndicator={false}
     />
   );
 }
+
+JobList.propTypes = {
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      company: PropTypes.object,
+      commitment: PropTypes.object,
+      locationNames: PropTypes.string,
+    }),
+  ).isRequired,
+};
 
 export default JobList;
 export { JobListLoading };

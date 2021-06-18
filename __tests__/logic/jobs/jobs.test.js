@@ -1,12 +1,13 @@
 import React from 'react';
 import { Linking } from 'react-native';
 import { MockedProvider } from '@apollo/client/testing';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, act } from '@testing-library/react-hooks';
 import { useApplyToJob, useLatestJobs } from '../../../src/logic/jobs';
 import {
   jobsQueryMock,
   jobsQueryErrorMock,
 } from '../../../fixtures/logic/jobs/mocks';
+import {waitFor} from "@testing-library/react-native";
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -78,48 +79,53 @@ describe('jobs', () => {
   describe('useApplyToJob custom hook', () => {
     test('should return initial state', () => {
       const { result } = renderHook(() => useApplyToJob(''));
-      const [apply, { error }] = result.current;
 
-      expect(apply).toBeTruthy();
-      expect(error).toBeNull();
+      expect(result.current[0]).toBeTruthy();
+      expect(result.current[1].error).toBeNull();
     });
 
     test('should verify if there is a proper app to open url', () => {
       const { canOpenURL } = mockSuccessLinking();
 
       const { result } = renderHook(() => useApplyToJob(''));
-      const [apply] = result.current;
 
       // Act
-      apply();
+      act(() => {
+        result.current[0]();
+      });
 
       // Assert
       expect(canOpenURL).toHaveBeenCalled();
     });
 
     test('should open url when there is a proper app the open it', async () => {
-      const { canOpenURL } = mockSuccessLinking();
+      const { canOpenURL, openURL } = mockSuccessLinking();
       const { result } = renderHook(() =>
         useApplyToJob('https://www.google.com/'),
       );
-      const [apply] = result.current;
 
       // Act
-      apply();
+      act(() => {
+        result.current[0]();
+      });
 
       // Assert
       expect(result.current[1].error).toBeNull();
       expect(canOpenURL).toHaveBeenCalled();
+      await waitFor(() => {
+        expect(openURL).toHaveBeenCalled();
+      });
     });
 
     test('should return error when there is not app the open url', async () => {
       const { canOpenURL, openURL } = mockFailureLinking();
 
       const { result, waitForNextUpdate } = renderHook(() => useApplyToJob(''));
-      const [apply] = result.current;
 
       // Act
-      apply();
+      act(() => {
+        result.current[0]();
+      });
       await waitForNextUpdate();
 
       // Assert

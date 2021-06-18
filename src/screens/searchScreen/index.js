@@ -20,7 +20,7 @@ import { useDebouncedCallback } from 'use-debounce';
 function SearchScreen() {
   const {
     operations: { setSearchTerm },
-    state: { jobs, loading },
+    state: { jobs, loading, searchTerm },
   } = useJobsSearch();
 
   const onChangeSearch = useDebouncedCallback(value => {
@@ -32,15 +32,15 @@ function SearchScreen() {
   }, [loading, jobs]);
 
   const SearchContent = () => {
-    if (loading && !jobs.length) {
+    if (!searchTerm) {
+      return <SearchView />;
+    }
+
+    if (loading) {
       return <JobListLoading />;
     }
 
-    if (jobs) {
-      return <JobList jobs={jobs} />;
-    }
-
-    return <SearchView />;
+    return <JobList jobs={jobs} />;
   };
 
   return (

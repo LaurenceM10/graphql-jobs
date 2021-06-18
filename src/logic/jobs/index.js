@@ -51,23 +51,32 @@ export function useJobsSearch() {
   }, [search, searchTerm]);
 
   useEffect(() => {
-    const fullTimeJobs = data?.commitments[0]?.jobs ?? [];
-    const partTimeJobs = data?.commitments[1]?.jobs ?? [];
-    const jobList = [...fullTimeJobs, ...partTimeJobs];
+    if (data) {
+      const fullTimeJobs = data?.commitments[0]?.jobs ?? [];
+      const partTimeJobs = data?.commitments[1]?.jobs ?? [];
+      const jobList = [...fullTimeJobs, ...partTimeJobs];
 
-    if (jobList) {
-      setJobs(jobList);
+      if (jobList) {
+        setJobs(jobList);
+      }
+
+      setSearching(false);
     }
-
-    setSearching(false);
   }, [data]);
+
+  useEffect(() => {
+    if (error) {
+      setSearching(false);
+    }
+  }, [error]);
 
   return {
     operations: {
       setSearchTerm,
     },
     state: {
-      jobs: !jobs.length && !searchTerm ? null : jobs,
+      jobs,
+      searchTerm,
       loading: loading || searching,
       error,
     },

@@ -47,7 +47,7 @@ function JobsCarousel({ jobs }) {
         renderItem={renderItem}
         onSnapToItem={setActiveSlide}
       />
-      <CarouselPagination activeSlide={activeSlide} dotsLength={jobs.length} />
+      <CarouselPagination activeSlide={activeSlide} dotsLength={jobs?.length} />
     </View>
   );
 }

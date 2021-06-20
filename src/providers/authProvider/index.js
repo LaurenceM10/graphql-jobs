@@ -14,7 +14,7 @@ function AuthProvider({ children }) {
     const timeout = setTimeout(() => {
       LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
       dispatch({ type: ACTIONS.HIDE_SPLASH });
-    }, 3000);
+    }, 1500);
 
     return () => timeout;
   }, []);

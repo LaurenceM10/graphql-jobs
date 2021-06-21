@@ -3,7 +3,7 @@ import { Platform, UIManager } from 'react-native';
 import ErrorBoundary from 'components/errorBoundary';
 
 import { ApolloProvider } from '@apollo/client';
-import AuthProvider from 'providers/authProvider/authProvider';
+import AuthProvider from 'providers/authProvider';
 
 import Navigation from 'navigation';
 import client from 'core/apollo/client';

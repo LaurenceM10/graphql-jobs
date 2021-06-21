@@ -8,7 +8,7 @@ import SplashScreen from 'screens/splashScreen';
 import JobDetailScreen from 'screens/jobDetailScreen';
 
 // Hooks
-import { useAuth } from 'providers/authProvider/authProvider';
+import { useAuth } from 'providers/authProvider';
 
 const Stack = createSharedElementStackNavigator();
 

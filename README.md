@@ -20,6 +20,11 @@ I'm using [Apollo Client](https://www.npmjs.com/package/@apollo/client) as a Gra
 
 * `yarn run android`
 
+Or to generate and run a release build: 
+* `npx react-native run-android --variant release` 
+
+This will compile JavaScript to bytecode during build time using [Hermes](https://hermesengine.dev/) which will improve app startup
+
 Here are some screens of what the app looks like:
 
 <img width="350" src=".github/screenshots/Screenshot_2021-06-16-21-32-55-125_com.graphqljobs.jpg"/>

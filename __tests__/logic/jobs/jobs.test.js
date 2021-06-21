@@ -1,17 +1,16 @@
 import React from 'react';
 import { Linking } from 'react-native';
 import { MockedProvider } from '@apollo/client/testing';
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 import { useApplyToJob, useLatestJobs } from '../../../src/logic/jobs';
 import {
   jobsQueryMock,
   jobsQueryErrorMock,
 } from '../../../fixtures/logic/jobs/mocks';
-import {waitFor} from "@testing-library/react-native";
+import { waitFor, act } from '@testing-library/react-native';
 
 afterEach(() => {
   jest.clearAllMocks();
-  jest.resetModules();
 });
 
 describe('jobs', () => {

@@ -1,22 +1,22 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import Animated from 'react-native-reanimated';
 
 import Ripple from 'react-native-material-ripple';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { useNavigation } from '@react-navigation/native';
 
-function TopBar({ onSave, goBack }) {
+function TopBar({ onSave, goBack, animatedStyle }) {
   return (
-    <View style={styles.header}>
+    <Animated.View style={[styles.header, animatedStyle]}>
       <Ripple style={styles.icon} onPress={goBack}>
         <Ionicons size={22} name="arrow-back" color="#555" />
       </Ripple>
       <Ripple style={styles.icon} onPress={onSave}>
         <Fontisto size={22} name="favorite" color="#bbb" />
       </Ripple>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -27,7 +27,7 @@ TopBar.propTypes = {
 
 const styles = StyleSheet.create({
   header: {
-    paddingVertical: 10,
+    paddingVertical: 6,
     paddingHorizontal: 16,
     flexDirection: 'row',
     alignItems: 'center',

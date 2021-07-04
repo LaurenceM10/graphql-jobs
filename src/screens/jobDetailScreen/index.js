@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   View,
   StyleSheet,
-  ScrollView,
   Dimensions,
   SafeAreaView,
   LayoutAnimation,
 } from 'react-native';
+import Animated, {
+  Extrapolate,
+  interpolate,
+  useSharedValue,
+  useAnimatedStyle,
+  useAnimatedScrollHandler,
+} from 'react-native-reanimated';
 
 import Markdown from 'components/markdown';
 import Padding from 'components/shared/padding';
@@ -15,6 +21,8 @@ import JobHeader from 'screens/jobDetailScreen/jobHeader';
 import JobActions from 'screens/jobDetailScreen/jobActions';
 
 import { useApplyToJob, useJobDetail, useSaveJob } from 'logic/jobs';
+
+const SafeAreaViewAnimated = Animated.createAnimatedComponent(SafeAreaView);
 
 function JobDetailScreen({ route, navigation }) {
   const { job } = route.params;
@@ -27,8 +35,26 @@ function JobDetailScreen({ route, navigation }) {
   });
   const [apply] = useApplyToJob(detail?.applyUrl);
   const [save] = useSaveJob(job);
+  const translateY = useSharedValue(0);
 
-  const goBack = () => navigation.goBack();
+  const handleScroll = useAnimatedScrollHandler(event => {
+    translateY.value = event.contentOffset.y;
+  });
+
+  const headerAnimatedStyles = useAnimatedStyle(() => {
+    const opacity = interpolate(
+      translateY.value,
+      [0, 100],
+      [1, 0],
+      Extrapolate.CLAMP,
+    );
+
+    return {
+      opacity,
+    };
+  });
+
+  const goBack = useCallback(() => navigation.goBack(), [navigation]);
 
   const renderContent = () => {
     if (detail) {
@@ -39,9 +65,13 @@ function JobDetailScreen({ route, navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.screen}>
-      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <TopBar onSave={save} goBack={goBack} />
+    <SafeAreaViewAnimated style={styles.screen}>
+      <Animated.ScrollView
+        onScroll={handleScroll}
+        stickyHeaderIndices={[0]}
+        style={styles.container}
+        showsVerticalScrollIndicator={false}>
+        <TopBar onSave={save} goBack={goBack} animatedStyle={headerAnimatedStyles} />
         <JobHeader
           id={id}
           title={title}
@@ -54,9 +84,9 @@ function JobDetailScreen({ route, navigation }) {
             {renderContent()}
           </Padding>
         </View>
-      </ScrollView>
+      </Animated.ScrollView>
       <JobActions onApply={apply} />
-    </SafeAreaView>
+    </SafeAreaViewAnimated>
   );
 }
 

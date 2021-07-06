@@ -36,11 +36,12 @@ export const JobsQueryResult = {
         company: {
           id: 'cjz8uierx01a307874cd9c4k7',
           name: 'Segment',
-          logoUrl: null,
+          logoUrl: 'logo',
           slug: 'segment',
         },
         remotes: [],
         locationNames: 'San Francisco',
+        __typename: 'Job',
       },
       {
         id: 'cjwt2a8j700by0793lnvon5c9',
@@ -52,7 +53,7 @@ export const JobsQueryResult = {
         company: {
           id: 'cjz8un1mw01ba0787sb8dzs5b',
           name: 'Unrealists',
-          logoUrl: null,
+          logoUrl: 'logo',
           slug: 'unrealists',
         },
         remotes: [
@@ -61,82 +62,7 @@ export const JobsQueryResult = {
           },
         ],
         locationNames: 'Remote / Berlin',
-      },
-      {
-        id: 'cjw1yogu0007j079339al4zyu',
-        slug: 'ad01d326-5a60-48c8-8978-e14e67d361cd',
-        title: 'Senior Software Engineer, API Development',
-        commitment: {
-          title: 'Full-time',
-        },
-        company: {
-          id: 'cjz8tmo0e00qd0787xa178zp4',
-          name: 'DeepCrawl',
-          logoUrl: '',
-          slug: 'deepcrawl',
-        },
-        remotes: [],
-        locationNames: 'London, United Kingdom',
-      },
-      {
-        id: 'cjwqsa7wj007d0778obv0dfs9',
-        slug: 'experienced-backend-engineer-go',
-        title: 'Experienced Backend Engineer - Go',
-        commitment: {
-          title: 'Full-time',
-        },
-        company: {
-          id: 'cjwqs94zt006z0778v60y96dd',
-          name: 'Theorem',
-          logoUrl: null,
-          slug: 'theorem',
-        },
-        remotes: [
-          {
-            name: 'Remote',
-          },
-        ],
-        locationNames: null,
-      },
-      {
-        id: 'cjwnlolmk03hm0756mmvkw5d2',
-        slug: 'senior-software-engineer-frontend',
-        title: 'Senior Software Engineer - Frontend',
-        commitment: {
-          title: 'Full-time',
-        },
-        company: {
-          id: 'cjwnlc0o303dg0756eaw8o24v',
-          name: 'Close',
-          logoUrl: '',
-          slug: 'close',
-        },
-        remotes: [
-          {
-            name: 'Remote',
-          },
-        ],
-        locationNames: null,
-      },
-      {
-        id: 'cjwnlegxb03dv0756ysmiqd0y',
-        slug: 'senior-software-engineer-backend',
-        title: 'Senior Software Engineer - Backend',
-        commitment: {
-          title: 'Full-time',
-        },
-        company: {
-          id: 'cjwnlc0o303dg0756eaw8o24v',
-          name: 'Close',
-          logoUrl: '',
-          slug: 'close',
-        },
-        remotes: [
-          {
-            name: 'Remote',
-          },
-        ],
-        locationNames: null,
+        __typename: 'Job',
       },
     ],
   },

@@ -12,7 +12,7 @@ function LatestJobs() {
 
   if (loading) {
     return (
-      <View testID="JobLoadingCard" style={{ marginBottom: 32 }}>
+      <View style={{ marginBottom: 32 }}>
         <JobLoadingCard />
       </View>
     );

@@ -8,6 +8,7 @@ module.exports = {
       '|react-native-reanimated' +
       '|react-navigation-shared-element' +
       '|react-native-snap-carousel' +
+      '|react-native-material-ripple' +
       ')/)',
   ],
 };

@@ -22,7 +22,7 @@ const defaultCompanyLogo =
 
 function JobLoadingCard() {
   return (
-    <View style={styles.card} testID="JobLoadingCard">
+    <View test style={styles.card}>
       <View style={styles.logoContainer}>
         <View style={styles.logo} />
       </View>

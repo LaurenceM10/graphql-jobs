@@ -34,10 +34,13 @@ class ErrorBoundary extends Component {
 
     if (state.hasError) {
       return (
-        <View style={styles.container}>
+        <View testID="ErrorBoundaryContainer" style={styles.container}>
           <Text style={styles.description}>An error has occurred</Text>
           <SizedBox height={22} />
-          <Ripple style={styles.button} onPress={this.resetState}>
+          <Ripple
+            testID="RestoreApp"
+            style={styles.button}
+            onPress={this.resetState}>
             <Text style={styles.textButton}>Go to home!</Text>
           </Ripple>
         </View>

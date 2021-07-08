@@ -71,7 +71,11 @@ function JobDetailScreen({ route, navigation }) {
         stickyHeaderIndices={[0]}
         style={styles.container}
         showsVerticalScrollIndicator={false}>
-        <TopBar onSave={save} goBack={goBack} animatedStyle={headerAnimatedStyles} />
+        <TopBar
+          onSave={save}
+          goBack={goBack}
+          animatedStyle={headerAnimatedStyles}
+        />
         <JobHeader
           id={id}
           title={title}

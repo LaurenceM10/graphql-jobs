@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import {
   render,
   waitFor,
-  waitForElementToBeRemoved,
 } from '@testing-library/react-native';
 import ErrorBoundary from '../../../src/components/errorBoundary';
 

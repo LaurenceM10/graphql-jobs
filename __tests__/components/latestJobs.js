@@ -49,7 +49,7 @@ describe('<LatestJobs />', () => {
     expect(loadingComponent).toBeTruthy();
   });
 
-  test('should render [JobsCarousel] when query response is successful', async () => {
+  test.skip('should render [JobsCarousel] when query response is successful', async () => {
     const testID = 'JobsCarousel';
     const component = await render(
       <MockedProvider mocks={mocks} addTypename={true}>

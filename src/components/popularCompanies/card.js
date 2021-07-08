@@ -7,7 +7,7 @@ import { POPPINS } from 'core/presentation/styles/fonts';
 
 function CompaniesLoading() {
   return (
-    <View style={{ flexDirection: 'row' }}>
+    <View testID="CompaniesLoading" style={{ flexDirection: 'row' }}>
       {Array.from({ length: 3 }, (_, index) => (
         <View style={[styles.card, styles.placeholderCard]} key={index}>
           <View

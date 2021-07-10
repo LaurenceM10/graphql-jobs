@@ -1,34 +1,38 @@
 import React from 'react';
-import { View } from 'react-native';
-import {
-  render,
-  waitFor,
-} from '@testing-library/react-native';
+import { render, waitFor } from '@testing-library/react-native';
 import ErrorBoundary from '../../../src/components/errorBoundary';
 
-const MockErrorComponent = () => <View>{null.null}</View>;
-const MockSuccessComponent = () => <View testID="MockSuccessComponent" />;
+const Bomb = ({ shouldThrow }) => {
+  if (shouldThrow) {
+    throw new Error('Bomb');
+  }
+
+  return null;
+};
 
 describe('<ErrorBoundary />', () => {
-  it('should render the children component correctly', async () => {
-    const { getByTestId } = await render(
+  it('should render the children component correctly', () => {
+    render(
       <ErrorBoundary>
-        <MockSuccessComponent />
+        <Bomb />
       </ErrorBoundary>,
     );
-
-    expect(getByTestId('MockSuccessComponent')).toBeTruthy();
   });
 
   it('should render the error boundary container when there is an error', async () => {
-    const { getByTestId } = await render(
+    const { getByTestId, rerender } = await render(
       <ErrorBoundary>
-        <MockErrorComponent />
+        <Bomb />
+      </ErrorBoundary>,
+    );
+
+    rerender(
+      <ErrorBoundary>
+        <Bomb shouldThrow />
       </ErrorBoundary>,
     );
 
     await waitFor(() => getByTestId('ErrorBoundaryContainer'));
-
     expect(getByTestId('ErrorBoundaryContainer')).toBeTruthy();
   });
 });

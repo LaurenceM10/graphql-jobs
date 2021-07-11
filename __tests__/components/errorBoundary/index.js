@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  render,
-  waitFor,
-  fireEvent,
-} from '@testing-library/react-native';
+import { render, waitFor, fireEvent } from '@testing-library/react-native';
 import ErrorBoundary from '../../../src/components/errorBoundary';
 
 beforeAll(() => {
@@ -20,42 +16,29 @@ const Bomb = ({ shouldThrow }) => {
 
 describe('<ErrorBoundary />', () => {
   it('should render the children component correctly', () => {
-    render(
-      <ErrorBoundary>
-        <Bomb />
-      </ErrorBoundary>,
-    );
+    render(<Bomb />, { wrapper: ErrorBoundary });
   });
 
   it('should render the error boundary container when there is an error', async () => {
-    const { getByTestId, rerender } = await render(
-      <ErrorBoundary>
-        <Bomb />
-      </ErrorBoundary>,
-    );
+    const { getByTestId, rerender } = render(<Bomb />, {
+      wrapper: ErrorBoundary,
+    });
 
-    rerender(
-      <ErrorBoundary>
-        <Bomb shouldThrow />
-      </ErrorBoundary>,
-    );
+    rerender(<Bomb shouldThrow />);
 
     await waitFor(() => getByTestId('ErrorBoundaryContainer'));
     expect(getByTestId('ErrorBoundaryContainer')).toBeTruthy();
   });
 
   it('should recover the app from errors', async () => {
-    const { getByTestId, rerender, queryByTestId, debug } = await render(
-      <ErrorBoundary>
-        <Bomb shouldThrow />
-      </ErrorBoundary>,
+    const { getByTestId, rerender, queryByTestId } = render(
+      <Bomb shouldThrow />,
+      {
+        wrapper: ErrorBoundary,
+      },
     );
 
-    rerender(
-      <ErrorBoundary>
-        <Bomb />
-      </ErrorBoundary>,
-    );
+    rerender(<Bomb />);
 
     fireEvent.press(getByTestId('RestoreApp'));
 

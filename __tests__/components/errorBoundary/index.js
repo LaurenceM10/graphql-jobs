@@ -2,6 +2,10 @@ import React from 'react';
 import { render, waitFor } from '@testing-library/react-native';
 import ErrorBoundary from '../../../src/components/errorBoundary';
 
+beforeAll(() => {
+  jest.spyOn(console, 'error').mockImplementation(() => {});
+});
+
 const Bomb = ({ shouldThrow }) => {
   if (shouldThrow) {
     throw new Error('Bomb');

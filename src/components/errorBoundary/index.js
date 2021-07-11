@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 import SizedBox from 'components/shared/sizedBox';
-import Ripple from 'react-native-material-ripple';
 
 // styles
 import { POPPINS } from 'core/presentation/styles/fonts';
@@ -37,12 +36,12 @@ class ErrorBoundary extends Component {
         <View testID="ErrorBoundaryContainer" style={styles.container}>
           <Text style={styles.description}>An error has occurred</Text>
           <SizedBox height={22} />
-          <Ripple
+          <TouchableOpacity
             testID="RestoreApp"
             style={styles.button}
             onPress={this.resetState}>
             <Text style={styles.textButton}>Go to home!</Text>
-          </Ripple>
+          </TouchableOpacity>
         </View>
       );
     }

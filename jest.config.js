@@ -8,6 +8,7 @@ module.exports = {
       '|react-native-vector-icons' +
       '|react-native-reanimated' +
       '|react-navigation-shared-element' +
+      '|react-native-shared-element' +
       '|react-native-snap-carousel' +
       '|react-native-material-ripple' +
       '|react-native-text-gradient' +
